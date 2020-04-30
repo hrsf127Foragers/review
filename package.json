@@ -1,0 +1,37 @@
+{
+  "name": "yelp-reviewcomponent",
+  "version": "1.0.0",
+  "description": "yelp list item component for review section",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "script": "nodemon server/app.js",
+    "react-dev": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrsf127Foragers/review.git"
+  },
+  "author": "Charlie Thao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrsf127Foragers/review/issues"
+  },
+  "homepage": "https://github.com/hrsf127Foragers/review#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "underscore": "^1.10.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.43.0"
+  }
+}
