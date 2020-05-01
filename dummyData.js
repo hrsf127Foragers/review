@@ -2007,3 +2007,5 @@
     { post_id: 34, restaurant_id: 98, user_id: 89 }
   ]
 }
+
+export default

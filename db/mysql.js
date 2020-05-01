@@ -10,9 +10,18 @@ connection.connect(() => {
 // function to insert all the restaurant to mysql
 const insertData = (data, callback) => {
   let restaurants = data.restaurants;
-  let posts = data.posts;
-  let users = data.users;
 
+  let queryStr = `INSERT INTO restaurants (restaurant_name) VALUES (?);`
+
+  for(let i = 0; i < restaurants.length; i++) {
+    connection.query(queryStr, (err, res) => {
+      if(!err) {
+        res.status(201).send(res);
+      } else {
+
+      }
+    })
+  }
 
 
 }
