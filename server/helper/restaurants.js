@@ -45,4 +45,4 @@ getUsers();
 getPost();
 createRelationship();
 
-console.log(restaurantObj)
+module.exports = restaurantObj;
