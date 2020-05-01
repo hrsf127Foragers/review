@@ -11,25 +11,38 @@ const getRestaurants = () => {
   let restaurants = [];
 
   for (var i = 0; i < limitData; i++) {
-    restaurants.push(data.generateRestaurant());
+    restaurants.push(data.generateRestaurant(i));
   }
 
-  restaurantObj.restaurants = restaurants;
+  restaurantObj["restaurants"] = restaurants;
 };
-
-getRestaurants();
 
 // function to randomly generate 100 users
 const getUsers = () => {
   let users = [];
 
   for(let i = 0; i < limitData; i++) {
-    users.push(data.generateUser());
+    users.push(data.generateUser(i));
   }
 
-  restaurantObj.users = users;
+  restaurantObj["users"] = users;
 }
 
-getUsers();
+// function to generate post
+function getPost() {
+  restaurantObj["posts"] = data.generatePost(limitData);
+}
 
-console.log('random generated data => ', restaurantObj)
+// function to create the relationship between restaurant, post and user
+function createRelationship() {
+  let relationTable = data.createRelation(restaurantObj.restaurants, restaurantObj.users, restaurantObj.posts)
+
+  restaurantObj["relationTable"] = relationTable;
+}
+
+getRestaurants();
+getUsers();
+getPost();
+createRelationship();
+
+console.log(restaurantObj)

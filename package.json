@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/app.js",
     "react-dev": "webpack -d --watch",
-    "generateData": "node server/helper/restaurants.js"
+    "generateData": "node server/helper/restaurants.js > dummyData.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
+    "lorem-ipsum": "^2.0.3",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.3",
     "react": "^15.4.2",
