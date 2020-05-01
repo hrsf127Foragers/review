@@ -9,12 +9,15 @@ CREATE DATABASE reviews;
 -- change to use the database
 USE reviews;
 
+
+-- create table restaurants
 CREATE TABLE restaurants (
   id INT NOT NULL AUTO_INCREMENT,
   restaurant_name VARCHAR(100),
   PRIMARY KEY (id)
 );
 
+-- create table users
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
   user_name VARCHAR(100),
@@ -26,6 +29,7 @@ CREATE TABLE users (
   PRIMARY KEY (id)
 );
 
+-- create table posts
 CREATE TABLE posts (
   id INT NOT NULL AUTO_INCREMENT,
   rating INT,
@@ -42,6 +46,7 @@ CREATE TABLE posts (
   PRIMARY KEY (id)
 );
 
+-- create table post_images
 CREATE TABLE post_images (
   post_id INT NOT NULL,
   image_url VARCHAR(100) NOT NULL,
