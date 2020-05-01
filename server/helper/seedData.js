@@ -121,6 +121,7 @@ module.exports = {
       relationTable.push(table);
     }
 
+    //testing
     return sortBy(relationTable, "restaurant_id");
   }
 
