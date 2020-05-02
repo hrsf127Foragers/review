@@ -33,6 +33,11 @@ function getPost() {
   restaurantObj["posts"] = data.generatePost(limitData);
 }
 
+// function to generate post images
+function getPostImage() {
+  restaurantObj["post_images"] = data.generateImage(limitData);
+}
+
 // function to create the relationship between restaurant, post and user
 function createRelationship() {
   let relationTable = data.createRelation(restaurantObj.restaurants, restaurantObj.users, restaurantObj.posts)
@@ -43,6 +48,7 @@ function createRelationship() {
 getRestaurants();
 getUsers();
 getPost();
+getPostImage();
 createRelationship();
 
 console.log(restaurantObj)
