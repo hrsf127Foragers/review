@@ -33,8 +33,7 @@ CREATE TABLE users (
 CREATE TABLE posts (
   id INT NOT NULL AUTO_INCREMENT,
   rating INT,
-  date DATE,
-  photo VARCHAR(300),
+  created_at VARCHAR(50),
   check_in INT,
   useful INT,
   funny INT,
