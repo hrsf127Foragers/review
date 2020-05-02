@@ -51,4 +51,5 @@ getPost();
 getPostImage();
 createRelationship();
 
-console.log(restaurantObj)
+// console.log(restaurantObj)
+module.export = restaurantObj;
