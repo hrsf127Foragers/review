@@ -2716,5 +2716,3 @@
     { post_id: 48, restaurant_id: 95, user_id: 21 }
   ]
 }
-
-export default
