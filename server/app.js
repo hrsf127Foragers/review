@@ -42,11 +42,6 @@ app.get('/api/:restaurant_id', (req, res) => {
   })
 });
 
-app.get('/api/:restaurant_id/users', (req, res) => {
-  console.log('end-point (/api/:restaurant_id/users): retrive all review by restaurant id')
-  res.send('end-point (/api/:restaurant_id/users): retrive all review by restaurant id')
-})
-
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);
 })

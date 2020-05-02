@@ -54,7 +54,7 @@ getPostImage();
 createRelationship();
 
 
-console.log(restaurantObj)
+// console.log(restaurantObj)
 
 // ############################################################################################
 // POPULATE THE DATABASE WITH THE DUMMY DATA
