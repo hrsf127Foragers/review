@@ -20,6 +20,17 @@ app.get('/api/restaurants', (req, res) => {
   })
 })
 
+app.get('/api/users', (req, res) => {
+  model.getUsers((err, data) => {
+    if(err) {
+      res.status(500).send(err);
+    } else {
+      console.log('(/api/users) => ', data)
+      res.status(200).send(data)
+    }
+  })
+})
+
 app.get('/api/posts', (req, res) => {
   model.getPosts((err, data) => {
     if(err) {

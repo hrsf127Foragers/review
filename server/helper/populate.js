@@ -3,10 +3,10 @@ const connection = require('../../db/config.js');
 const data = require('./seedData.js');
 
 // declaration of data to be generate
-let restaurantDataLimt = 100;
-let userDataLimt = 100;
-let postDataLimt = 100;
-let postImageDataLimt = 100;
+let restaurantDataLimt = 10;
+let userDataLimt = 10;
+let postDataLimt = 10;
+let postImageDataLimt = 10;
 
 // declaration of restaurant information
 const restaurantObj = {};
@@ -56,9 +56,20 @@ getPost();
 getPostImage();
 createRelationship();
 
+console.log('before => ', restaurantObj)
 
-// console.log(restaurantObj)
+// let relationTable = restaurantObj.relationTable;
 
+// for(let i = 0; i < relationTable.length; i++) {
+//   for(let j = 0; j < restaurantObj.posts.length; j++) {
+//     if( relationTable[i].post_id === restaurantObj.posts[j].id) {
+//       restaurantObj.posts[j].user_id = relationTable[i].user_id;
+//       restaurantObj.posts[j].restaurant_id = relationTable[i].restaurant_id;
+//     }
+//   }
+// }
+
+// console.log('after =>', restaurantObj)
 // ############################################################################################
 // POPULATE THE DATABASE WITH THE DUMMY DATA
 // ############################################################################################
@@ -72,9 +83,9 @@ const insertRestaurants = (restaurant, callback) => {
   connection.query(queryStr, (err, res) => {
     if(err) {
       console.log('error saving..')
-      callback(err)
+      callback(err, null)
     } else {
-      callback('Success')
+      callback(null, 'Success')
     }
   });
 }
@@ -124,7 +135,7 @@ const insertPosts = (post, callback) => {
 
   let queryStr = `INSERT INTO posts (rating, created_at, check_in, useful, funny, cool, post, user_id, restaurant_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-  connection.query(queryStr, [post.rating, post.created_at, post.check_in, post.useful, post.funny, post.cool, post.post,post.user_id, post.restaurant_id], (err, res) => {
+  connection.query(queryStr, [post.rating, post.created_at, post.check_in, post.useful, post.funny, post.cool, post.post, post.user_id, post.restaurant_id], (err, res) => {
     if(err) {
       callback(err, null)
     } else {
@@ -137,13 +148,13 @@ const insertPosts = (post, callback) => {
 let postData = restaurantObj.posts;
 
 for(let i = 0 ; i < postData.length; i++) {
-  insertPosts(postData[i], (err, res) => {
-    if(err) {
-      console.log('Error saving', err)
-    } else {
-      console.log('Successfully save')
-    }
-  })
+  // insertPosts(postData[i], (err, res) => {
+  //   if(err) {
+  //     console.log('Error saving', err)
+  //   } else {
+  //     console.log('Successfully save')
+  //   }
+  // })
 }
 
 
@@ -166,11 +177,11 @@ const insertPostImages = (image, callback) => {
 let postImageData = restaurantObj.post_images;
 
 for(let i = 0 ; i < postImageData.length; i++) {
-  insertPostImages(postImageData[i], (err, res) => {
-    if(err) {
-      console.log('Error saving', err)
-    } else {
-      console.log('Successfully save')
-    }
-  })
+  // insertPostImages(postImageData[i], (err, res) => {
+  //   if(err) {
+  //     console.log('Error saving', err)
+  //   } else {
+  //     console.log('Successfully save')
+  //   }
+  // })
 }

@@ -56,8 +56,8 @@ const getPosts = (callback) => {
   });
 }
 
-const getPostImage = (callback) => {
-  let queryStr = `SELECT * FROM post_images`;
+const getUsers = (callback) => {
+  let queryStr = `SELECT * FROM users`;
 
   connection.query(queryStr, (err, data) => {
     if(err) {
@@ -69,9 +69,22 @@ const getPostImage = (callback) => {
   });
 }
 
+const getPostImage = (callback) => {
+  let queryStr = `SELECT * FROM post_images`;
+
+  connection.query(queryStr, (err, data) => {
+    if(err) {
+      callback(err, null)
+    } else {
+      callback(null, data)
+    }
+  });
+}
+
 module.exports = {
   getRestaurants,
   getReviewByRestaurantId,
   getPosts,
-  getPostImage
+  getPostImage,
+  getUsers
 }
