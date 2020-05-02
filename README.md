@@ -29,4 +29,6 @@ npm run react-dev
 
 ```#!/bin/bash
 npm start
+npm run createDB
+npm run seedData
 ```
