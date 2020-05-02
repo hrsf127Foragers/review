@@ -1,6 +1,7 @@
 const LoremIpsum = require("lorem-ipsum").LoremIpsum;
 const shuffle = require('underscore').shuffle;
 const sortBy = require('underscore').sortBy;
+var faker = require('faker');
 
 let names = ['Joe', 'Mike', 'Trevor', 'Servio', 'Charlie', 'Lou', 'Jake', 'Jack', 'Tom', 'Jill', 'Sandy', 'Beth', 'Bob', 'Lindsay', 'Mary', 'Carlos', 'Nick', 'Ben', 'Jerry', 'Scooby', 'Scrappy'];
 
@@ -91,12 +92,37 @@ module.exports = {
 
       let post = {
         id: i,
+        rating: Math.floor(Math.random() * 5 + 0),
+        created_at: new Date(),
+        check_in: Math.floor(Math.random() * 5 + 0),
+        useful: Math.floor(Math.random() * 5 + 0),
+        funny: Math.floor(Math.random() * 5 + 0),
+        cool: Math.floor(Math.random() * 5 + 0),
         paragraphs: lorem.generateParagraphs(numOfParagraphs)
       }
+
       posts.push(post)
     }
 
     return posts;
+  },
+
+  // random create image for post
+  generateImage: function(range) {
+    let postImage = [];
+
+
+    for(let i = 0; i < range; i++) {
+      let randomPostIndex = this.randomNumberGenerator(range)
+      let imageObj = {
+        post_id: randomPostIndex,
+        image_url: faker.image.imageUrl()
+      }
+
+      postImage.push(imageObj)
+    }
+
+    return postImage;
   },
 
   // random create relationship between restaurant, post and user
