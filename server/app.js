@@ -31,6 +31,17 @@ app.get('/api/posts', (req, res) => {
   })
 })
 
+app.get('/api/postImages', (req, res) => {
+  model.getPostImage((err, data) => {
+    if(err) {
+      res.status(500).send(err);
+    } else {
+      console.log('(/api/posts) => ', data)
+      res.status(200).send(data)
+    }
+  })
+})
+
 app.get('/api/:restaurant_id', (req, res) => {
   model.getReviewByRestaurantId(req.params.restaurant_id, (err, data) => {
     if(err) {

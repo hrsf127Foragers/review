@@ -129,7 +129,7 @@ module.exports = {
       let randomPostIndex = this.randomNumberGenerator(range)
       let imageObj = {
         post_id: randomPostIndex,
-        image_url: faker.image.imageUrl()
+        image_url: 'https://loremflickr.com/g/320/240/restaurant'
       }
 
       postImage.push(imageObj)

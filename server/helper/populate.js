@@ -3,7 +3,10 @@ const connection = require('../../db/config.js');
 const data = require('./seedData.js');
 
 // declaration of data to be generate
-let limitData = 100;
+let restaurantDataLimt = 100;
+let userDataLimt = 100;
+let postDataLimt = 100;
+let postImageDataLimt = 100;
 
 // declaration of restaurant information
 const restaurantObj = {};
@@ -12,7 +15,7 @@ const restaurantObj = {};
 const getRestaurants = () => {
   let restaurants = [];
 
-  for (var i = 1; i <= limitData; i++) {
+  for (var i = 1; i <= restaurantDataLimt; i++) {
     restaurants.push(data.generateRestaurant(i));
   }
 
@@ -23,7 +26,7 @@ const getRestaurants = () => {
 const getUsers = () => {
   let users = [];
 
-  for(let i = 1; i <= limitData; i++) {
+  for(let i = 1; i <= userDataLimt; i++) {
     users.push(data.generateUser(i));
   }
 
@@ -32,12 +35,12 @@ const getUsers = () => {
 
 // function to generate post
 function getPost() {
-  restaurantObj["posts"] = data.generatePost(500, restaurantObj.restaurants, restaurantObj.users);
+  restaurantObj["posts"] = data.generatePost(postDataLimt, restaurantObj.restaurants, restaurantObj.users);
 }
 
 // function to generate post images
 function getPostImage() {
-  restaurantObj["post_images"] = data.generateImage(limitData);
+  restaurantObj["post_images"] = data.generateImage(postImageDataLimt);
 }
 
 // function to create the relationship between restaurant, post and user
@@ -135,6 +138,35 @@ let postData = restaurantObj.posts;
 
 for(let i = 0 ; i < postData.length; i++) {
   insertPosts(postData[i], (err, res) => {
+    if(err) {
+      console.log('Error saving', err)
+    } else {
+      console.log('Successfully save')
+    }
+  })
+}
+
+
+// function to insert all the posts to mysql
+const insertPostImages = (image, callback) => {
+  console.log('testing => ', image)
+
+  let queryStr = `INSERT INTO post_images (post_id, image_url) VALUES (?, ?)`;
+
+  connection.query(queryStr, [image.post_id, image.image_url], (err, res) => {
+    if(err) {
+      callback(err, null)
+    } else {
+      callback(null, res)
+    }
+  });
+
+}
+
+let postImageData = restaurantObj.post_images;
+
+for(let i = 0 ; i < postImageData.length; i++) {
+  insertPostImages(postImageData[i], (err, res) => {
     if(err) {
       console.log('Error saving', err)
     } else {
