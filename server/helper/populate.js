@@ -32,7 +32,7 @@ const getUsers = () => {
 
 // function to generate post
 function getPost() {
-  restaurantObj["posts"] = data.generatePost(limitData, restaurantObj.restaurants, restaurantObj.users);
+  restaurantObj["posts"] = data.generatePost(500, restaurantObj.restaurants, restaurantObj.users);
 }
 
 // function to generate post images
@@ -54,7 +54,7 @@ getPostImage();
 createRelationship();
 
 
-// console.log(restaurantObj)
+console.log(restaurantObj)
 
 // ############################################################################################
 // POPULATE THE DATABASE WITH THE DUMMY DATA
@@ -117,7 +117,7 @@ for(let i = 0 ; i < userData.length; i++) {
 
 // function to insert all the posts to mysql
 const insertPosts = (post, callback) => {
-  console.log('testing => ', post)
+  // console.log('testing => ', post)
 
   let queryStr = `INSERT INTO posts (rating, created_at, check_in, useful, funny, cool, post, user_id, restaurant_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 

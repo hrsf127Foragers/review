@@ -99,7 +99,7 @@ module.exports = {
 
       let dateLength = date[0].length -1;
 
-      let randomDate = date[1][this.randomNumberGenerator(dateLength)] + '/' + date[0][this.randomNumberGenerator(dateLength)] + '/' + date[2][this.randomNumberGenerator(dateLength)]
+      let randomDate = date[1][this.randomNumberGenerator(dateLength)] + '-' + date[0][this.randomNumberGenerator(dateLength)] + '-' + date[2][this.randomNumberGenerator(dateLength)]
 
       let post = {
         id: i,
@@ -109,8 +109,8 @@ module.exports = {
         useful: Math.floor(Math.random() * 5 + 0),
         funny: Math.floor(Math.random() * 5 + 0),
         cool: Math.floor(Math.random() * 5 + 0),
-        user_id: this.randomNumberGenerator(users.length),
-        restaurant_id: this.randomNumberGenerator(restaurants.length),
+        user_id: this.randomNumberGenerator(users.length - 1),
+        restaurant_id: this.randomNumberGenerator(restaurants.length -1),
         post: lorem.generateParagraphs(numOfParagraphs)
       }
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const db = require('../db/model.js');
+const model = require('../db/model.js');
 
 const app = express();
 
@@ -10,21 +10,33 @@ const PORT = 3000;
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/restaurants', (req, res) => {
-  db.getRestaurants((err, data) => {
+  model.getRestaurants((err, data) => {
     if(err) {
       res.status(500).send(err);
     } else {
+      console.log('(/api/restaurants) => ', data)
+      res.status(200).send(data)
+    }
+  })
+})
+
+app.get('/api/posts', (req, res) => {
+  model.getPosts((err, data) => {
+    if(err) {
+      res.status(500).send(err);
+    } else {
+      console.log('(/api/posts) => ', data)
       res.status(200).send(data)
     }
   })
 })
 
 app.get('/api/:restaurant_id', (req, res) => {
-  console.log('end-point (/api/:restaurant_id): item list by restaurant id');
-  db.getReviewByRestaurantId(req.params.restaurant_id, (err, data) => {
+  model.getReviewByRestaurantId(req.params.restaurant_id, (err, data) => {
     if(err) {
       res.status(500).send(err)
     } else {
+      console.log('end-point (/api/:restaurant_id): item list by restaurant id =>', req.params.restaurant_id, data.length);
       res.status(200).send(data);
     }
   })
