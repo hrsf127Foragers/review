@@ -59,6 +59,17 @@ createRelationship();
 
 // console.log(restaurantObj)
 
+let relationTable = restaurantObj.relationTable;
+
+for(let i = 0; i < relationTable.length; i++) {
+  for(let j = 0; j < restaurantObj.posts.length; j++) {
+    if(relationTable[i].post_id === restaurantObj.posts[j].id) {
+      restaurantObj.posts[j].user_id = relationTable[i].user_id;
+      restaurantObj.posts[j].restaurant_id = relationTable[i].restaurant_id;
+    }
+  }
+}
+
 // ############################################################################################
 // POPULATE THE DATABASE WITH THE DUMMY DATA
 // ############################################################################################
