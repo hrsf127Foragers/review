@@ -15,6 +15,13 @@ let foodTypes = ['Mexican', 'Tacos', 'Burritos', 'Pizza', 'Italian', 'American',
 
 let storeTypes = ['Bistro', 'Stand', 'Shack', 'Restaurant', 'House', 'Parlor', 'Bar', 'Truck', 'Place', 'Kitchen', 'Corner', 'Spot'];
 
+let date = [
+  ['01', '02', '05', '10', '15', '12', '25'], // days
+  ['01', '02', '05', '06', '08', '09', '11'], // months
+  ['2014', '2015', '2016', '2017', '2018', '2019', '2020'], // years
+]
+
+
 module.exports = {
   // random generate index
   randomIndexGenerator: function(array) {
@@ -23,7 +30,7 @@ module.exports = {
 
   // random generate number by range
   randomNumberGenerator: function(range) {
-    return Math.floor(Math.random() * range);
+    return Math.floor(Math.random() * range +1);
   },
 
   // randomly generate restaurant's name
@@ -36,8 +43,8 @@ module.exports = {
 
     let restaurantObj = {
       id: id,
-      foodTypes: randomFoodType,
-      storeTypes: randomStoreType,
+      // foodTypes: randomFoodType,
+      // storeTypes: randomStoreType,
       storeName: randomStoreName
     }
 
@@ -72,33 +79,39 @@ module.exports = {
   },
 
   // randomly generate post
-  generatePost: function(range) {
+  generatePost: function(range, restaurants, users) {
     // predefined auto generate placeholder text
     const lorem = new LoremIpsum({
       sentencesPerParagraph: {
-        max: 8,
-        min: 4
+        max: 7,
+        min: 2
       },
       wordsPerSentence: {
-        max: 16,
-        min: 4
+        max: 7,
+        min: 3
       }
     });
 
     let posts = [];
 
-    for(let i = 0; i < range; i++) {
+    for(let i = 1; i <= range; i++) {
       let numOfParagraphs = 1 + Math.floor(Math.random() * 3);
+
+      let dateLength = date[0].length -1;
+
+      let randomDate = date[1][this.randomNumberGenerator(dateLength)] + '/' + date[0][this.randomNumberGenerator(dateLength)] + '/' + date[2][this.randomNumberGenerator(dateLength)]
 
       let post = {
         id: i,
         rating: Math.floor(Math.random() * 5 + 0),
-        created_at: new Date(),
+        created_at: randomDate,
         check_in: Math.floor(Math.random() * 5 + 0),
         useful: Math.floor(Math.random() * 5 + 0),
         funny: Math.floor(Math.random() * 5 + 0),
         cool: Math.floor(Math.random() * 5 + 0),
-        paragraphs: lorem.generateParagraphs(numOfParagraphs)
+        user_id: this.randomNumberGenerator(users.length),
+        restaurant_id: this.randomNumberGenerator(restaurants.length),
+        post: lorem.generateParagraphs(numOfParagraphs)
       }
 
       posts.push(post)
@@ -112,7 +125,7 @@ module.exports = {
     let postImage = [];
 
 
-    for(let i = 0; i < range; i++) {
+    for(let i = 1; i <= range; i++) {
       let randomPostIndex = this.randomNumberGenerator(range)
       let imageObj = {
         post_id: randomPostIndex,
@@ -133,10 +146,10 @@ module.exports = {
 
     let relationTable = []
 
-    for(let i = 0; i < restaurantShuffle.length; i++) {
-      let randomRestaurantIndex = this.randomIndexGenerator(restaurants);
-      let randomUserIndex = this.randomIndexGenerator(users);
-      let randomPostIndex = this.randomIndexGenerator(posts);
+    for(let i = 1; i <= restaurantShuffle.length; i++) {
+      let randomRestaurantIndex = this.randomNumberGenerator(restaurants.length);
+      let randomUserIndex = this.randomNumberGenerator(users.length);
+      let randomPostIndex = this.randomNumberGenerator(posts.length);
 
       let table = {
         post_id: randomPostIndex,

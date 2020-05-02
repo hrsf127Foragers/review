@@ -1,3 +1,5 @@
+const mysql = require('mysql');
+const connection = require('../../db/config.js');
 const data = require('./seedData.js');
 
 // declaration of data to be generate
@@ -10,7 +12,7 @@ const restaurantObj = {};
 const getRestaurants = () => {
   let restaurants = [];
 
-  for (var i = 0; i < limitData; i++) {
+  for (var i = 1; i <= limitData; i++) {
     restaurants.push(data.generateRestaurant(i));
   }
 
@@ -21,7 +23,7 @@ const getRestaurants = () => {
 const getUsers = () => {
   let users = [];
 
-  for(let i = 0; i < limitData; i++) {
+  for(let i = 1; i <= limitData; i++) {
     users.push(data.generateUser(i));
   }
 
@@ -30,7 +32,7 @@ const getUsers = () => {
 
 // function to generate post
 function getPost() {
-  restaurantObj["posts"] = data.generatePost(limitData);
+  restaurantObj["posts"] = data.generatePost(limitData, restaurantObj.restaurants, restaurantObj.users);
 }
 
 // function to generate post images
@@ -51,5 +53,92 @@ getPost();
 getPostImage();
 createRelationship();
 
+
 // console.log(restaurantObj)
-module.export = restaurantObj;
+
+// ############################################################################################
+// POPULATE THE DATABASE WITH THE DUMMY DATA
+// ############################################################################################
+
+// function to insert all the restaurant to mysql
+const insertRestaurants = (restaurant, callback) => {
+  let restaurantName = restaurant.storeName;
+
+  let queryStr = `INSERT INTO restaurants (restaurant_name) VALUES ("${restaurantName}")`;
+
+  connection.query(queryStr, (err, res) => {
+    if(err) {
+      console.log('error saving..')
+      callback(err)
+    } else {
+      callback('Success')
+    }
+  });
+}
+
+let restaurantData = restaurantObj.restaurants;
+
+for(let i = 0 ; i < restaurantData.length; i++) {
+  insertRestaurants(restaurantData[i], (err, res) => {
+    if(err) {
+      console.log('Error saving', err)
+    } else {
+      console.log('Successfully save')
+    }
+  })
+}
+
+// function to insert all the users to mysql
+const insertUsers = (user, callback) => {
+  let queryStr = `INSERT INTO users (user_name, location, friends, reviews, photos) VALUES (?, ?, ?, ?, ?)`;
+
+  connection.query(queryStr, [user.user_name, user.location, user.friends, user.reviews, user.photos], (err, res) => {
+    if(err) {
+      console.log('error saving..')
+      callback(err, null)
+    } else {
+      callback(null, 'Success')
+    }
+  });
+
+}
+
+let userData = restaurantObj.users;
+
+for(let i = 0 ; i < userData.length; i++) {
+  insertUsers(userData[i], (err, res) => {
+    if(err) {
+      console.log('Error saving', err)
+    } else {
+      console.log('Successfully save')
+    }
+  })
+}
+
+// function to insert all the posts to mysql
+const insertPosts = (post, callback) => {
+  console.log('testing => ', post)
+
+  let queryStr = `INSERT INTO posts (rating, created_at, check_in, useful, funny, cool, post, user_id, restaurant_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  connection.query(queryStr, [post.rating, post.created_at, post.check_in, post.useful, post.funny, post.cool, post.post,post.user_id, post.restaurant_id], (err, res) => {
+    if(err) {
+      callback(err, null)
+    } else {
+      callback(null, res)
+    }
+  });
+
+}
+
+let postData = restaurantObj.posts;
+
+for(let i = 0 ; i < postData.length; i++) {
+  insertPosts(postData[i], (err, res) => {
+    if(err) {
+      console.log('Error saving', err)
+    } else {
+      console.log('Successfully save')
+    }
+  })
+}

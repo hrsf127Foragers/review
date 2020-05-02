@@ -1,11 +1,6 @@
 const express = require('express');
 const path = require('path');
-const db = require('../db/mysql.js');
-
-// require the dummy data
-const data = require('./helper/restaurants.js');
-
-console.log('data => ', data)
+const db = require('../db/model.js');
 
 const app = express();
 
@@ -14,26 +9,31 @@ const PORT = 3000;
 // enable express middleware
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.post('/api/insert', (req, res) => {
-  db.insertData(data, function(err, data) => {
+app.get('/api/restaurants', (req, res) => {
+  db.getRestaurants((err, data) => {
     if(err) {
-      console.log('Error: insert => ', err);
+      res.status(500).send(err);
     } else {
-      console.log('Success: insert => ', data);
+      res.status(200).send(data)
     }
   })
 })
 
 app.get('/api/:restaurant_id', (req, res) => {
   console.log('end-point (/api/:restaurant_id): item list by restaurant id');
-  res.send('end-point (/api/:restaurant_id): item list by restaurant id');
+  db.getReviewByRestaurantId(req.params.restaurant_id, (err, data) => {
+    if(err) {
+      res.status(500).send(err)
+    } else {
+      res.status(200).send(data);
+    }
+  })
 });
 
 app.get('/api/:restaurant_id/users', (req, res) => {
   console.log('end-point (/api/:restaurant_id/users): retrive all review by restaurant id')
   res.send('end-point (/api/:restaurant_id/users): retrive all review by restaurant id')
 })
-
 
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);

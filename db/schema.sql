@@ -21,11 +21,10 @@ CREATE TABLE restaurants (
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
   user_name VARCHAR(100),
-  restaurant_id int,
   location VARCHAR(100),
   friends INT,
   reviews INT,
-  phtos INT,
+  photos INT,
   PRIMARY KEY (id)
 );
 
@@ -38,6 +37,7 @@ CREATE TABLE posts (
   useful INT,
   funny INT,
   cool INT,
+  post VARCHAR(1000),
   user_id INT NOT NULL,
   restaurant_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id),
@@ -52,3 +52,4 @@ CREATE TABLE post_images (
   FOREIGN KEY (post_id) REFERENCES posts(id)
 );
 
+INSERT INTO restaurants (restaurant_name) VALUES ('charlie quick-stop');
