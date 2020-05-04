@@ -14,7 +14,7 @@ app.get('/api/restaurants', (req, res) => {
     if(err) {
       res.status(500).send(err);
     } else {
-      console.log('(/api/restaurants) => ', data)
+      console.log('(/api/restaurants) => ', data.length)
       res.status(200).send(data)
     }
   })
@@ -25,7 +25,7 @@ app.get('/api/users', (req, res) => {
     if(err) {
       res.status(500).send(err);
     } else {
-      console.log('(/api/users) => ', data)
+      console.log('(/api/users) => ', data.length)
       res.status(200).send(data)
     }
   })
@@ -36,7 +36,7 @@ app.get('/api/posts', (req, res) => {
     if(err) {
       res.status(500).send(err);
     } else {
-      console.log('(/api/posts) => ', data)
+      console.log('(/api/posts) => ', data.length)
       res.status(200).send(data)
     }
   })
@@ -47,7 +47,7 @@ app.get('/api/postImages', (req, res) => {
     if(err) {
       res.status(500).send(err);
     } else {
-      console.log('(/api/posts) => ', data)
+      console.log('(/api/posts) => ', data.length)
       res.status(200).send(data)
     }
   })

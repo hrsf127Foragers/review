@@ -1,7 +1,7 @@
 import React from 'react';
 
-import User from './User.jsx';
-import Review from './Review.jsx';
+import User from '../User/User.jsx';
+import Review from '../Review/Review.jsx';
 
 class App extends React.Component {
   constructor() {
