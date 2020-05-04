@@ -4,10 +4,10 @@ const method = require('./seedData.js');
 
 const randomGeneratedMethod = {
   // declaration of data to be generate
-  restaurantDataLimt: 100,
-  userDataLimt: 100,
-  postDataLimt: 1500,
-  postImageDataLimt: 1500,
+  restaurantDataLimt: 10,
+  userDataLimt: 10,
+  postDataLimt: 100,
+  postImageDataLimt: 100,
 
   // declaration of restaurant information
   restaurantObj: {},
@@ -60,7 +60,7 @@ randomGeneratedMethod.generatePostImage();
 randomGeneratedMethod.generateRelationship();
 
 let restaurantData = randomGeneratedMethod.restaurantObj;
-// console.log(restaurantData.posts)
+console.log(restaurantData.posts)
 
 
 // ############################################################################################

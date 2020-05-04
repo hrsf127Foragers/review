@@ -19,6 +19,15 @@ const getRestaurants = (callback) => {
 // function to get all the review given restaurant id
 const getReviewByRestaurantId = (id, callback) => {
 
+  // let queryStr = `SELECT
+  //                   *
+  //                 FROM
+  //                   posts
+  //                 INNER JOIN
+  //                   users
+  //                 ON
+  //                   posts.restaurant_id = ${id} and users.id = posts.user_id`;
+
   let queryStr = `SELECT
                     restaurants.restaurant_name, restaurants.id as restaruantId, posts.restaurant_id, users.user_name, users.location, users.friends, users.reviews, users.photos, posts.rating, posts.created_at, posts.check_in, posts.check_in, posts.useful, posts.funny, posts.cool, posts.post, post_images.image_url
                   FROM
