@@ -8,7 +8,7 @@ const getRestaurants = (callback) => {
 
   connection.query(queryStr, (err, data) => {
     if(err) {
-      console.log('error saving..')
+      console.log('error retriving restaurants..')
       callback(err, null)
     } else {
       callback(null, data)
@@ -35,7 +35,7 @@ const getReviewByRestaurantId = (id, callback) => {
 
   connection.query(queryStr, (err, data) => {
     if(err) {
-      console.log('error saving..')
+      console.log('error retreiving resturants by id..')
       callback(err, null)
     } else {
       callback(null, data)
@@ -48,7 +48,7 @@ const getPosts = (callback) => {
 
   connection.query(queryStr, (err, data) => {
     if(err) {
-      console.log('error saving..')
+      console.log('error retreiving posts..')
       callback(err, null)
     } else {
       callback(null, data)
@@ -61,7 +61,7 @@ const getUsers = (callback) => {
 
   connection.query(queryStr, (err, data) => {
     if(err) {
-      console.log('error saving..')
+      console.log('error retreiving users..')
       callback(err, null)
     } else {
       callback(null, data)
@@ -74,6 +74,7 @@ const getPostImage = (callback) => {
 
   connection.query(queryStr, (err, data) => {
     if(err) {
+      console.log('error retreiving postImages..')
       callback(err, null)
     } else {
       callback(null, data)

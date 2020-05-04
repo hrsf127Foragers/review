@@ -1,7 +1,6 @@
 const LoremIpsum = require("lorem-ipsum").LoremIpsum;
 const shuffle = require('underscore').shuffle;
 const sortBy = require('underscore').sortBy;
-var faker = require('faker');
 
 let names = ['Joe', 'Mike', 'Trevor', 'Servio', 'Charlie', 'Lou', 'Jake', 'Jack', 'Tom', 'Jill', 'Sandy', 'Beth', 'Bob', 'Lindsay', 'Mary', 'Carlos', 'Nick', 'Ben', 'Jerry', 'Scooby', 'Scrappy'];
 
@@ -99,7 +98,11 @@ module.exports = {
 
       let dateLength = date[0].length -1;
 
-      let randomDate = date[1][this.randomNumberGenerator(dateLength)] + '-' + date[0][this.randomNumberGenerator(dateLength)] + '-' + date[2][this.randomNumberGenerator(dateLength)]
+      let randomDate = date[1][this.randomNumberGenerator(dateLength)] + '-' + date[0][this.randomNumberGenerator(dateLength)] + '-' + date[2][this.randomNumberGenerator(dateLength)];
+
+      // console.log(`post: ${i} user: ${this.randomNumberGenerator(users)} restaurant: ${i%restaurants === 0 ? 1 : i % restaurants}`)
+
+      let restaurantId = i%restaurants === 0 ? 1 : i % restaurants;
 
       let post = {
         id: i,
@@ -109,8 +112,8 @@ module.exports = {
         useful: Math.floor(Math.random() * 5 + 0),
         funny: Math.floor(Math.random() * 5 + 0),
         cool: Math.floor(Math.random() * 5 + 0),
-        user_id: this.randomNumberGenerator(users.length - 1),
-        restaurant_id: this.randomNumberGenerator(restaurants.length -1),
+        user_id: this.randomNumberGenerator(users),
+        restaurant_id: restaurantId,
         post: lorem.generateParagraphs(numOfParagraphs)
       }
 

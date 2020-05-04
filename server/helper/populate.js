@@ -6,8 +6,8 @@ const randomGeneratedMethod = {
   // declaration of data to be generate
   restaurantDataLimt: 100,
   userDataLimt: 100,
-  postDataLimt: 200,
-  postImageDataLimt: 200,
+  postDataLimt: 1500,
+  postImageDataLimt: 1500,
 
   // declaration of restaurant information
   restaurantObj: {},
@@ -36,12 +36,12 @@ const randomGeneratedMethod = {
 
   // function to generate post
   generatePost: () => {
-    randomGeneratedMethod.restaurantObj["posts"] = method.generatePost(randomGeneratedMethod.postDataLimt, randomGeneratedMethod.restaurantObj.restaurants, randomGeneratedMethod.restaurantObj.users);
+    randomGeneratedMethod.restaurantObj["posts"] = method.generatePost(randomGeneratedMethod.postDataLimt, randomGeneratedMethod.restaurantDataLimt, randomGeneratedMethod.userDataLimt);
   },
 
   // function to generate post images
   generatePostImage: () => {
-    randomGeneratedMethod.restaurantObj["post_images"] = method.generateImage(randomGeneratedMethod.postImageDataLimt);
+    randomGeneratedMethod.restaurantObj["post_images"] = method.generateImage(randomGeneratedMethod.postDataLimt);
   },
 
   // function to create the relationship between restaurant, post and user
@@ -63,17 +63,6 @@ let restaurantData = randomGeneratedMethod.restaurantObj;
 // console.log(restaurantData.posts)
 
 
-let relationTable = restaurantObj.relationTable;
-
-for(let i = 0; i < relationTable.length; i++) {
-  for(let j = 0; j < restaurantObj.posts.length; j++) {
-    if(relationTable[i].post_id === restaurantObj.posts[j].id) {
-      restaurantObj.posts[j].user_id = relationTable[i].user_id;
-      restaurantObj.posts[j].restaurant_id = relationTable[i].restaurant_id;
-    }
-  }
-}
-
 // ############################################################################################
 // POPULATE THE DATABASE WITH THE DUMMY DATA
 // ############################################################################################
@@ -93,8 +82,6 @@ const databaseMethods = {
       }
     });
   },
-
-  // let restaurantData = restaurantObj.restaurants;
 
   // restaurantLoop function
   restaurantLoop: (restaurants) => {
@@ -123,8 +110,6 @@ const databaseMethods = {
     });
   },
 
-  // let userData = restaurantObj.users;
-
   // userLoop function
   userLoop: (users) => {
     for(let i = 0 ; i < users.length; i++) {
@@ -150,8 +135,6 @@ const databaseMethods = {
       }
     });
   },
-
-  // let postData = restaurantObj.posts;
 
   // postLoop function
   postLoop: (posts) => {
@@ -180,8 +163,6 @@ const databaseMethods = {
     });
 
   },
-
-  // let postImageData = restaurantObj.post_images;
 
   // postLoop function
   postImageLoop: (postImage) => {
