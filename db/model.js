@@ -31,7 +31,8 @@ const getReviewByRestaurantId = (id, callback) => {
                     users
                   WHERE
                     posts.restaurant_id = ${id} and restaurants.id = ${id} and post_images.post_id = posts.id
-                  ORDER BY created_at DESC`;
+                  ORDER BY created_at DESC
+                  LIMIT 50`;
 
   connection.query(queryStr, (err, data) => {
     if(err) {
