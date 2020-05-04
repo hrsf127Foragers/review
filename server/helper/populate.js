@@ -60,7 +60,7 @@ randomGeneratedMethod.generatePostImage();
 randomGeneratedMethod.generateRelationship();
 
 let restaurantData = randomGeneratedMethod.restaurantObj;
-console.log(restaurantData.posts)
+// console.log(restaurantData)
 
 
 // ############################################################################################
@@ -125,9 +125,9 @@ const databaseMethods = {
 
   // function to insert all the posts to mysql
   insertPosts: (post, callback) => {
-    let queryStr = `INSERT INTO posts (rating, created_at, check_in, useful, funny, cool, post, user_id, restaurant_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    let queryStr = `INSERT INTO posts (rating, created_at, check_in, useful, funny, cool, post) VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
-    connection.query(queryStr, [post.rating, post.created_at, post.check_in, post.useful, post.funny, post.cool, post.post,post.user_id, post.restaurant_id], (err, res) => {
+    connection.query(queryStr, [post.rating, post.created_at, post.check_in, post.useful, post.funny, post.cool, post.post], (err, res) => {
       if(err) {
         callback(err, null)
       } else {
@@ -149,6 +149,33 @@ const databaseMethods = {
     }
   },
 
+  // function to insert relation data to mysql
+  insertRelationTable: (relation, callback) => {
+    let queryStr = `INSERT INTO relation_table (post_id, restaurant_id, user_id) VALUES (${relation.post_id}, ${relation.restaurant_id}, ${relation.user_id})`;
+
+    connection.query(queryStr, (err, res) => {
+        if(err) {
+          callback(err, null)
+        } else {
+          callback(null, res)
+        }
+      });
+  },
+
+  // relationTable loop
+  // postLoop function
+  relationTableLoop: (relation) => {
+    for(let i = 0 ; i < relation.length; i++) {
+      databaseMethods.insertRelationTable(relation[i], (err, res) => {
+        if(err) {
+          console.log('Error saving', err)
+        } else {
+          console.log('Successfully save relation: ', i)
+        }
+      })
+    }
+    return;
+  },
 
   // function to insert all the posts to mysql
   insertPostImages: (image, callback) => {
@@ -184,5 +211,6 @@ let restaurantDetail = randomGeneratedMethod.restaurantObj;
 databaseMethods.restaurantLoop(restaurantDetail.restaurants);
 databaseMethods.userLoop(restaurantDetail.users);
 databaseMethods.postLoop(restaurantDetail.posts);
+databaseMethods.relationTableLoop(restaurantDetail.relationTable);
 databaseMethods.postImageLoop(restaurantDetail.post_images);
 

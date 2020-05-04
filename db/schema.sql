@@ -12,9 +12,8 @@ USE reviews;
 
 -- create table restaurants
 CREATE TABLE restaurants (
-  id INT NOT NULL AUTO_INCREMENT,
-  restaurant_name VARCHAR(100),
-  PRIMARY KEY (id)
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  restaurant_name VARCHAR(100)
 );
 
 -- create table users
@@ -38,11 +37,16 @@ CREATE TABLE posts (
   funny INT,
   cool INT,
   post VARCHAR(1000),
-  user_id INT NOT NULL,
-  restaurant_id INT NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES users(id),
-  FOREIGN KEY (restaurant_id) REFERENCES restaurants(id),
   PRIMARY KEY (id)
+);
+
+CREATE TABLE relation_table (
+  post_id INT,
+  restaurant_id INT,
+  user_id INT,
+  FOREIGN KEY (post_id) REFERENCES posts(id),
+  FOREIGN KEY (restaurant_id) REFERENCES restaurants(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 -- create table post_images
@@ -52,4 +56,6 @@ CREATE TABLE post_images (
   FOREIGN KEY (post_id) REFERENCES posts(id)
 );
 
-INSERT INTO restaurants (restaurant_name) VALUES ('charlie quick-stop');
+
+
+-- INSERT INTO restaurants (restaurant_name) VALUES ('charlie quick-stop');

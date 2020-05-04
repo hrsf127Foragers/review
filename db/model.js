@@ -48,6 +48,7 @@ const getReviewByRestaurantId = (id, callback) => {
       console.log('error retreiving resturants by id..')
       callback(err, null)
     } else {
+      console.log('res')
       callback(null, data)
     }
   });
