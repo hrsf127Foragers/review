@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import styles from './App.css';
+
 import Restaurant from '../Restaurant/Restaurant.jsx';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
@@ -67,7 +69,7 @@ class App extends React.Component {
     return (
       <div className="review_parent--container">
         {reviewTemplate}
-        <div className="pagination_container">
+        <div className={styles.pagination_container}>
           {pagination}
         </div>
       </div>
