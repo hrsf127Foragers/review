@@ -58,7 +58,7 @@ app.get('/api/:restaurant_id', (req, res) => {
     if(err) {
       res.status(500).send(err)
     } else {
-      console.log('end-point (/api/:restaurant_id): item list by restaurant id =>', req.params.restaurant_id, data.length);
+      // console.log('end-point (/api/:restaurant_id): item list by restaurant id =>', req.params.restaurant_id, data.length);
       res.status(200).send(data);
     }
   })

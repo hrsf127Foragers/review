@@ -29,6 +29,35 @@ div#review {
   transition-delay: 5s ease-in;
 }
 
+.pagination_container {
+  margin-top: 12px;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+span.pagination {
+  padding: 5px;
+}
+span.pagination:hover {
+  cursor: pointer;
+  background-color: #326dc7;
+  padding: 5px;
+  box-shadow: 0px 1px 2px 1px;
+  border-radius: 4px;
+}
+
+span.pagination.active {
+  background-color: #326dc7;
+  padding: 5px;
+  box-shadow: 0px 1px 2px 1px;
+  border-radius: 4px;
+}
+
 /*  style applied to user data */
 .user_container {
   width: 35%;
