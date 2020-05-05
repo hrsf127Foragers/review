@@ -20,6 +20,10 @@ span.pagination.active {
   border-radius: 4px;
 }
 
+span.pagination {
+  padding: 5px;
+}
+
 span.pagination:hover {
   cursor: pointer;
   background-color: #326dc7;

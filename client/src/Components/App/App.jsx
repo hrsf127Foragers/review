@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
-import styles from './App.css';
-
 import Restaurant from '../Restaurant/Restaurant.jsx';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
+
+import styles from './App.css';
 
 class App extends React.Component {
   constructor() {
