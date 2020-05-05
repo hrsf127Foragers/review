@@ -20,24 +20,22 @@ const getRestaurants = (callback) => {
 const getReviewByRestaurantId = (id, callback) => {
 
   let queryStr = `SELECT
-                    restaurants.restaurant_name, restaurants.id as restaruantId, posts.restaurant_id, users.user_name, users.location, users.friends, users.reviews, users.photos, posts.rating, posts.created_at, posts.check_in, posts.check_in, posts.useful, posts.funny, posts.cool, posts.post, post_images.image_url
-                  FROM
-                    restaurants
-                  INNER JOIN
-                    posts
-                  INNER JOIN
-                    post_images
-                  INNER JOIN
-                    users
-                  WHERE
-                    posts.restaurant_id = ${id} and restaurants.id = ${id} and post_images.post_id = posts.id
-                  ORDER BY created_at DESC`;
+                    *
+                  FROM relation_table rt
+                  INNER JOIN restaurants r
+                    on rt.restaurant_id = r.id and r.id = ${id}
+                  INNER JOIN users u
+                    on rt.user_id = u.id
+                  INNER JOIN posts p
+                    on rt.post_id = p.id
+                  ORDER BY STR_TO_DATE(created_at, '%m-%d-%Y') DESC`;
 
   connection.query(queryStr, (err, data) => {
     if(err) {
       console.log('error retreiving resturants by id..')
       callback(err, null)
     } else {
+      console.log('retreiving resturants by id ', data)
       callback(null, data)
     }
   });

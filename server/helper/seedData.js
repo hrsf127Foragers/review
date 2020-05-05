@@ -149,7 +149,7 @@ module.exports = {
 
     let relationTable = []
 
-    for(let i = 1; i <= restaurantShuffle.length; i++) {
+    for(let i = 1; i <= postShuffle.length; i++) {
       let randomRestaurantIndex = this.randomNumberGenerator(restaurants.length);
       let randomUserIndex = this.randomNumberGenerator(users.length);
       let randomPostIndex = this.randomNumberGenerator(posts.length);

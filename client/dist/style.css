@@ -96,6 +96,12 @@ span.friends_2 {
 
 
 /* styling applied to posts */
+.border_top {
+  margin-bottom: 6%;
+  border-bottom: 1px solid grey;
+  opacity: .25;
+}
+
 .rating {
   display: flex;
 }
