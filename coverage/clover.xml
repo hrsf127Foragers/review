@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1588713900224" clover="3.2.0">
-  <project timestamp="1588713900225" name="All files">
+<coverage generated="1588722019224" clover="3.2.0">
+  <project timestamp="1588722019224" name="All files">
     <metrics statements="34" coveredstatements="14" conditionals="6" coveredconditionals="1" methods="17" coveredmethods="6" elements="57" coveredelements="21" complexity="0" loc="34" ncloc="34" packages="5" files="5" classes="5"/>
     <package name="yelp-reviewComponent">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
