@@ -1,0 +1,25 @@
+/* eslint-env jest */
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+
+import axios from 'axios';
+import App from '../client/src/Components/App/App';
+
+describe('MyComponent', () => {
+  it('should be true', () => {
+    const foo = true;
+    expect(foo).toBe(true);
+  })
+})
+
+describe('App Component', () => {
+  it('<App /> component should exist', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper).toExist()
+  });
+
+  it('<App /> should contains a div with class "review_parent--container"', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.contains(<div className="review_parent--container"> </div> )).toBe(true);
+  });
+});
