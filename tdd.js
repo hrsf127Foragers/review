@@ -2,21 +2,6 @@
 > yelp-reviewcomponent@1.0.0 test /Users/charliethao/Desktop/HackReactor_Immersive_March2020/hrsf127-FEC-2020/yelp-reviewComponent
 > jest
 
--------------------------------------------------------|----------|----------|----------|----------|-------------------|
-File                                                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
--------------------------------------------------------|----------|----------|----------|----------|-------------------|
-All files                                              |       40 |    16.67 |    35.29 |    41.18 |                   |
- yelp-reviewComponent                                  |      100 |      100 |      100 |      100 |                   |
-  sum.js                                               |      100 |      100 |      100 |      100 |                   |
- yelp-reviewComponent/client/src/Components/App        |     38.1 |    16.67 |       30 |       40 |                   |
-  App.jsx                                              |     38.1 |    16.67 |       30 |       40 |... 49,50,59,63,64 |
- yelp-reviewComponent/client/src/Components/Restaurant |        0 |      100 |        0 |        0 |                   |
-  Restaurant.jsx                                       |        0 |      100 |        0 |        0 |... 20,26,35,46,53 |
- yelp-reviewComponent/client/src/Components/Review     |      100 |      100 |      100 |      100 |                   |
-  Review.jsx                                           |      100 |      100 |      100 |      100 |                   |
- yelp-reviewComponent/client/src/Components/User       |      100 |      100 |      100 |      100 |                   |
-  User.jsx                                             |      100 |      100 |      100 |      100 |                   |
--------------------------------------------------------|----------|----------|----------|----------|-------------------|
   console.log test.js:1304
     data =>  [
       {
@@ -1318,3 +1303,18 @@ All files                                              |       40 |    16.67 |  
       }
     ]
 
+-------------------------------------------------------|----------|----------|----------|----------|-------------------|
+File                                                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-------------------------------------------------------|----------|----------|----------|----------|-------------------|
+All files                                              |    37.14 |    16.67 |    29.41 |    38.24 |                   |
+ yelp-reviewComponent                                  |      100 |      100 |      100 |      100 |                   |
+  sum.js                                               |      100 |      100 |      100 |      100 |                   |
+ yelp-reviewComponent/client/src/Components/App        |    33.33 |    16.67 |       20 |       35 |                   |
+  App.jsx                                              |    33.33 |    16.67 |       20 |       35 |... 49,50,59,63,64 |
+ yelp-reviewComponent/client/src/Components/Restaurant |        0 |      100 |        0 |        0 |                   |
+  Restaurant.jsx                                       |        0 |      100 |        0 |        0 |... 20,26,35,46,53 |
+ yelp-reviewComponent/client/src/Components/Review     |      100 |      100 |      100 |      100 |                   |
+  Review.jsx                                           |      100 |      100 |      100 |      100 |                   |
+ yelp-reviewComponent/client/src/Components/User       |      100 |      100 |      100 |      100 |                   |
+  User.jsx                                             |      100 |      100 |      100 |      100 |                   |
+-------------------------------------------------------|----------|----------|----------|----------|-------------------|
