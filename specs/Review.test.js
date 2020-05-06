@@ -13,7 +13,7 @@ describe('MyComponent', () => {
 
 describe('Review Component', () => {
   it('<Review /> component should exist', () => {
-    const wrapper = shallow(<Review />);
-    // expect(wrapper).toBeDefined()
+    const wrapper = shallow(<Review review={{}}/>);
+    expect(wrapper).toExist()
   });
 });

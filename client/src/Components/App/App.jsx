@@ -8,8 +8,8 @@ import Review from '../Review/Review.jsx';
 import styles from './App.css';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       reviews: [],

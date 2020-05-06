@@ -14,7 +14,7 @@ describe('MyComponent', () => {
 
 describe('User Component', () => {
   it('<User /> component should exist', () => {
-    const wrapper = shallow(<User />);
-    expect(wrapper).toExists()
+    const wrapper = shallow(<User user={{}}/>);
+    expect(wrapper).toExist()
   });
 });

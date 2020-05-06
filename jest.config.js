@@ -23,11 +23,17 @@ module.exports = {
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: ['<rootDir>/enzyme.config.js'],
 
+  setupFilesAfterEnv: ['jest-enzyme'],
+
   // The test environment that will be used for testing
-  testEnvironment: 'jsdom',
+  testEnvironment: 'enzyme',
 
   // The glob patterns Jest uses to detect test files
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
+
+  testEnvironmentOptions: {
+    'enzymeAdapter': 'react16'
+  },
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ['\\\\node_modules\\\\'],
