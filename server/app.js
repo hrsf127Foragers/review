@@ -53,7 +53,7 @@ app.get('/api/postImages', (req, res) => {
   })
 })
 
-app.get('/api/:restaurant_id', (req, res) => {
+app.get('/api/:restaurant_id/reviews', (req, res) => {
   model.getReviewByRestaurantId(req.params.restaurant_id, (err, data) => {
     if(err) {
       res.status(500).send(err)

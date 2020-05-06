@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jest-config": "^26.0.1",
+    "jest-css-modules": "^2.1.0",
     "jest-puppeteer": "^4.4.0",
     "lorem-ipsum": "^2.0.3",
     "mysql": "^2.18.1",
