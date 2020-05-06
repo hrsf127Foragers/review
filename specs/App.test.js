@@ -12,9 +12,13 @@ describe('MyComponent', () => {
   })
 })
 
-describe('App Component', () => {
+describe('Should render the <App /> component onto the screen', () => {
   it('<App /> component should exist', () => {
     const wrapper = shallow(<App />);
     expect(wrapper).toBeDefined()
   });
+
+  it('should invoke pagination on componentDidMount', () => {
+
+  })
 });
