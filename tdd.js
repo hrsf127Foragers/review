@@ -1,8 +1,14 @@
 
 > yelp-reviewcomponent@1.0.0 test /Users/charliethao/Desktop/HackReactor_Immersive_March2020/hrsf127-FEC-2020/yelp-reviewComponent
-> jest
+> jest --coverage --colors
 
-  console.log test.js:1304
+----------|----------|----------|----------|----------|-------------------|
+File      |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+----------|----------|----------|----------|----------|-------------------|
+[32;1mAll files[0m |[32;1m      100[0m |[32;1m      100[0m |[32;1m      100[0m |[32;1m      100[0m |[33;1m                  [0m |
+[32;1m sum.js  [0m |[32;1m      100[0m |[32;1m      100[0m |[32;1m      100[0m |[32;1m      100[0m |[33;1m                  [0m |
+----------|----------|----------|----------|----------|-------------------|
+  [2mconsole.log[22m [2mtest.js:1304[22m
     data =>  [
       {
         id: 17,
@@ -1303,18 +1309,3 @@
       }
     ]
 
--------------------------------------------------------|----------|----------|----------|----------|-------------------|
-File                                                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
--------------------------------------------------------|----------|----------|----------|----------|-------------------|
-All files                                              |    37.14 |    16.67 |    29.41 |    38.24 |                   |
- yelp-reviewComponent                                  |      100 |      100 |      100 |      100 |                   |
-  sum.js                                               |      100 |      100 |      100 |      100 |                   |
- yelp-reviewComponent/client/src/Components/App        |    33.33 |    16.67 |       20 |       35 |                   |
-  App.jsx                                              |    33.33 |    16.67 |       20 |       35 |... 49,50,59,63,64 |
- yelp-reviewComponent/client/src/Components/Restaurant |        0 |      100 |        0 |        0 |                   |
-  Restaurant.jsx                                       |        0 |      100 |        0 |        0 |... 20,26,35,46,53 |
- yelp-reviewComponent/client/src/Components/Review     |      100 |      100 |      100 |      100 |                   |
-  Review.jsx                                           |      100 |      100 |      100 |      100 |                   |
- yelp-reviewComponent/client/src/Components/User       |      100 |      100 |      100 |      100 |                   |
-  User.jsx                                             |      100 |      100 |      100 |      100 |                   |
--------------------------------------------------------|----------|----------|----------|----------|-------------------|
