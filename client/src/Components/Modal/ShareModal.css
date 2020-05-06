@@ -1,0 +1,10 @@
+form {
+  text-align: center;
+  position: absolute;
+  background-color: cornflowerblue;
+  z-index: 100;
+  width: 100wh;
+  top: 5%;
+  width: 28rem;
+  left: 16rem;
+}

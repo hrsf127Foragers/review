@@ -4,6 +4,8 @@ import axios from 'axios';
 import Restaurant from '../Restaurant/Restaurant.jsx';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
+import Modal from '../Modal/ShareModal.jsx';
+
 
 import styles from './App.css';
 
@@ -62,8 +64,8 @@ class App extends React.Component {
     });
 
     let pagination = this.state.reviews.map((el, index) => {
-      let className = index === this.state.paginationNum ? "active" : ""
-      return <span key={index} className={className + ' pagination'} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
+      let className = index === this.state.paginationNum ? true : false;
+      return <span key={index} className={`${styles.pagination} ${className ? styles.active: ''}`} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
     })
 
     return (
@@ -72,6 +74,7 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
+        <Modal />
       </div>
     )
   }
