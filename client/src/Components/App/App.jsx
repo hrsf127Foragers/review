@@ -5,9 +5,11 @@ import Restaurant from '../Restaurant/Restaurant.jsx';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
 
+import styles from './App.css';
+
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       reviews: [],
@@ -21,7 +23,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/1')
+    axios.get('http://localhost:3000/api/1/reviews')
       .then(({data}) => {
         // console.log('Reviews by restaurant id => ', data);
         this.pagination(data)
@@ -67,7 +69,7 @@ class App extends React.Component {
     return (
       <div className="review_parent--container">
         {reviewTemplate}
-        <div className="pagination_container">
+        <div className={styles.pagination_container}>
           {pagination}
         </div>
       </div>

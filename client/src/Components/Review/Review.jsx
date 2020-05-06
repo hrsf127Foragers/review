@@ -25,9 +25,9 @@ const Review = ({review}) => {
         </p>
       </div>
       <div className="review_images">
-        <img className="images" src="https://loremflickr.com/g/320/240/restaurant" />
-        <img className="images" src="https://loremflickr.com/g/320/240/restaurant" />
-        <img className="images" src="https://loremflickr.com/g/320/240/restaurant" />
+        <img className="images" src="https://loremflickr.com/g/320/240/restaurant?random=1" />
+        <img className="images" src="https://loremflickr.com/g/320/240/restaurant?random=2" />
+        <img className="images" src="https://loremflickr.com/g/320/240/restaurant?random=3" />
       </div>
       <div className="emoji">
         <span className="emoji_icon"> <i className="fa fa-lightbulb-o" aria-hidden="true"></i> {review.useful} </span>
