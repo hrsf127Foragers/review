@@ -1,11 +1,7 @@
 import React from 'react';
 
-
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
-
-import styles from './Restaurant.css';
-import userStyle from '../User/User.css';
 
 class Restaurant extends React.Component {
   constructor(props) {
@@ -33,8 +29,9 @@ class Restaurant extends React.Component {
       friends: review.friends,
       reviews: review.reviews,
       photos: review.photos,
-      picture: 'https://loremflickr.com/g/320/240/person?'
+      picture: review.image_url + '?random' + Math.floor(Math.random() * 100 +1)
     }
+
 
     let reviewObj = {
       rating: review.rating,
@@ -44,8 +41,13 @@ class Restaurant extends React.Component {
       useful: review.useful,
       cool: review.cool,
       funny: review.funny,
-      image_url: review.image_url
+      image_url: review.image_url + '?random' + Math.floor(Math.random() * 100 +1)
+
+
     }
+
+    // console.log('user obj => ', userObj)
+    // console.log('review obj => ', reviewObj)
 
     this.setState({
       user: userObj,
@@ -56,10 +58,10 @@ class Restaurant extends React.Component {
   render() {
     return (
       <div>
-        <div className={styles.border_top}></div>
-        <div className={styles.body_content}>
-          <User user={this.state.user} />
-          <Review review={this.state.review} />
+        <div className="border_top"></div>
+        <div className="body_content">
+          <User user={this.state.user}/>
+          <Review review={this.state.review}/>
         </div>
       </div>
     )

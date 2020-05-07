@@ -1,43 +1,40 @@
 import React from 'react';
 
-import styles from './User.css';
-
-const User = ({user, num}) => {
+const User = ({user}) => {
   // console.log('user => ', user)
-  let url = `https://loremflickr.com/g/320/240/people?random=${Math.floor(Math.random() * 100 +1)}`
   return (
-    <div className={styles.user_container}>
-      <div className={styles.user_infos}>
-        <img className={styles.user_image} src={url} />
-        <div className={styles.user_detail}>
-          <h3 className={styles.user_name}>{user.name}</h3>
-          <h4 className={styles.user_location}>{user.location}</h4>
-          <p className={styles.user_friends}>
-            <span className={styles.friends_1}> <i className="fa fa-odnoklassniki" aria-hidden="true"></i> </span>
-            <span className={styles.friends_2}> <i className="fa fa-odnoklassniki" aria-hidden="true"></i> </span>
+    <div className="user_container">
+      <div className="user_infos">
+        <img className="user_image" src={user.picture} />
+        <div className="user_detail">
+          <h3 className="user_name">{user.name}</h3>
+          <h4 className="user_location">{user.location}</h4>
+          <p className="user_friends">
+            <span className="friends_1"> <i className="fa fa-odnoklassniki" aria-hidden="true"></i> </span>
+            <span className="friends_2"> <i className="fa fa-odnoklassniki" aria-hidden="true"></i> </span>
             <span> {user.friends} friends </span>
           </p>
-          <p className={styles.user_reviews}>
-            <span className={styles.user_star}> <i className="fa fa-star-o" aria-hidden="true"></i> </span>
+          <p className="user_reviews">
+            <span className="user_star"> <i className="fa fa-star-o" aria-hidden="true"></i> </span>
             <span>{user.reviews} reviews</span>
           </p>
           <p className="user_photos">
-            <span className={styles.user_photo__num}> <i className="fa fa-camera" aria-hidden="true"></i> </span>
+            <span className="user_photo--num"> <i className="fa fa-camera" aria-hidden="true"></i> </span>
             <span>{user.photos} photos</span>
           </p>
         </div>
       </div>
-      <div className={styles.shareReview}>
-          <div className={styles.share}>
+      <div className="shareReview">
+          <div className="share">
             <span> <i className="fa fa-share" aria-hidden="true"></i> </span>
-            <span className={styles.share_text}>
+            <span className="share_text">
               Share Review
             </span>
           </div>
-          <div className={styles.divider}></div>
-          <div className={styles.embed}>
+          <div className="divider"></div>
+          <div className="embed">
             <span> <i className="fa fa-code" aria-hidden="true"></i> </span>
-            <span className={styles.embed_text}>
+            <span className="embed_text">
               Embed Review
             </span>
           </div>

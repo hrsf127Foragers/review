@@ -20,6 +20,7 @@ CREATE TABLE restaurants (
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
   user_name VARCHAR(100),
+  image_url VARCHAR(100),
   location VARCHAR(100),
   friends INT,
   reviews INT,
@@ -52,7 +53,7 @@ CREATE TABLE relation_table (
 -- create table post_images
 CREATE TABLE post_images (
   post_id INT NOT NULL,
-  image_url VARCHAR(100) NOT NULL,
+  review_image_url VARCHAR(100) NOT NULL,
   FOREIGN KEY (post_id) REFERENCES posts(id)
 );
 
