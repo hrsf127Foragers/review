@@ -322,3 +322,104 @@ h3 span {
   margin: 1rem auto;
   border-radius: 5px;
 } */
+
+
+/* .preview{
+  margin: 0 2rem;
+} */
+
+/* .tagline {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+} */
+
+/* .preview_detail {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* span.tagline_text{
+  font-family: auto;
+  font-size: medium;
+  margin-left: 10px;
+  color: rgba(0,0,0, 0.55);
+} */
+
+/* .preview_container {
+  padding: 5px 12px 24px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0, 0.2);
+} */
+
+/* .preview_detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+} */
+
+/* h4.restaurant_title,
+h4.user_name {
+  color: #0072bb;
+  margin: 8px 0;
+} */
+
+/* .preview_rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+/* span.site_logo {
+  color: #d32423;
+}
+
+.site_image__container {
+  font-size: xx-large;
+}
+
+.user_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
+.user_info__data {
+  margin-left: 16px;
+}
+
+.preview_post__container {
+  border-top: 1px solid rgba(0,0,0, 0.2);
+}
+
+.user_info_rating {
+  display: flex;
+}
+
+h4.user_name {
+  margin-bottom: 0;
+}
+
+.user_info_rating p {
+  margin-top: 5px;
+} */
+
+/* span.created_date,
+.review_count,
+.preview_friends_count,
+.preview_stars_count {
+  font-family: auto;
+  color: rgb(0, 0, 0, .45);
+} */
+
+p.preview_post {
+  font-family: auto;
+  color: rgb(0, 0, 0, .8);
+}
+
+h4.heading {
+  margin-bottom: 0;
+}

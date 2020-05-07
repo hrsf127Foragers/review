@@ -9,7 +9,7 @@ const ShareModal = ({showShareModal}) => {
       <section className={styles.modal_main}>
         <div className={styles.form_heading}>
           <h1>Share review</h1>
-          <h1 className={styles.close} onClick={() => showShareModal()}>X</h1>
+          <p className={styles.close} onClick={() => showShareModal()}>X</p>
         </div>
 
         <div className={styles.socialMedia}>
@@ -25,11 +25,11 @@ const ShareModal = ({showShareModal}) => {
 
         <div className={styles.restaurant_url}>
           <span className={styles.icon}>icon</span>
-          <input className={styles.site_url} type="text" placeholder="web url"></input>
+          <input className={styles.site_url} type="text" placeholder="https://www.yelp.com"></input>
         </div>
 
         <div className={styles.form_divider}>
-          <h3><span>OR</span></h3>
+          <p><span>OR</span></p>
         </div>
 
         <div className={styles.user_input}>
@@ -42,11 +42,11 @@ const ShareModal = ({showShareModal}) => {
             <input className={styles.from_email}></input>
           </div>
           <div className={styles.email}>
-            <label>To <span className="message">Email Addresses</span></label>
+            <label>To <span className={styles.message}>Email Addresses</span></label>
             <input className={styles.to_email}></input>
           </div>
           <div className={styles.note}>
-            <label>Add a note <span className="message">Optional</span></label>
+            <label>Add a note <span className={styles.message}>Optional</span></label>
             <textarea className={styles.textarea} rows="10" cols="50"></textarea>
           </div>
 

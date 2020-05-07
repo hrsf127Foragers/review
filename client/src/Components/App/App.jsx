@@ -5,6 +5,7 @@ import Restaurant from '../Restaurant/Restaurant.jsx';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
 import ShareModal from '../Modal/ShareModal.jsx';
+import EmbedModal from '../Modal/EmbedModal.jsx';
 
 
 import styles from './App.css';
@@ -24,7 +25,6 @@ class App extends React.Component {
 
     this.pagination = this.pagination.bind(this);
     this.handlePaginationClick = this.handlePaginationClick.bind(this);
-    this.showEmbedModal = this.showEmbedModal.bind(this);
   }
 
   componentDidMount() {
@@ -46,7 +46,7 @@ class App extends React.Component {
 
   showEmbedModal() {
     console.log('toggle embed modal')
-    // this.setState({ showEmbedModal: !this.state.showEmbedModal });
+    this.setState({ showEmbedModal: !this.state.showEmbedModal });
   }
 
   pagination(data) {
@@ -74,7 +74,11 @@ class App extends React.Component {
 
     let reviewTemplate = this.state.reviews[this.state.paginationNum] && this.state.reviews[this.state.paginationNum].map((el, index) => {
         <div onClick={() => this.showShareModal()}>Toggle modal</div>
-        return <Restaurant key={index} review={el} showShareModal={this.showShareModal.bind(this)}/>
+        return <Restaurant
+                  key={index} review={el}
+                  showShareModal={this.showShareModal.bind(this)}
+                  showEmbedModal={this.showEmbedModal.bind(this)}
+                  />
     });
 
     let pagination = this.state.reviews.map((el, index) => {
@@ -89,6 +93,8 @@ class App extends React.Component {
           {pagination}
         </div>
         {this.state.showShareModal ? <ShareModal showShareModal={this.showShareModal.bind(this)}/> : <div></div>}
+
+        {this.state.showEmbedModal ? <EmbedModal showEmbedModal={this.showEmbedModal.bind(this)}/> : <div></div>}
       </div>
     )
   }
