@@ -76,7 +76,7 @@ class App extends React.Component {
 
     let pagination = this.state.reviews.map((el, index) => {
       let className = index === this.state.paginationNum ? "active" : ""
-      return <span key={index} className={className + ' pagination'} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
+      return <span key={index} className={styles.className + styles.pagination} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
     })
 
     return (
@@ -85,7 +85,7 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
-        {/* {this.state.showShareModal ? <ShareModal show={this.state.show} handleClose={this.hideModal}/> : <div></div>} */}
+        {this.state.showShareModal ? <ShareModal show={this.state.show} handleClose={this.hideModal}/> : <div></div>}
       </div>
     )
   }

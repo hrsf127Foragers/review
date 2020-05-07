@@ -1,0 +1,69 @@
+.post {
+  width: 60%;
+  display: inline-block;
+}
+
+.rating {
+  display: flex;
+}
+
+.stars {
+  margin-right: 10px;
+}
+
+.review_stars {
+  background-color: #f43839;
+  color: white;
+  border-right: 2px solid white;
+}
+
+.created_date {
+  opacity: .25;
+}
+
+a.post_photos__link {
+  text-decoration: none;
+  color: black;
+}
+
+.post_photos__num {
+  margin-top: 10px;
+}
+
+.post_photos__link {}
+
+span.post_photos__link__text {
+  margin-left: 5px;
+  color: #326dc7;
+}
+
+span.post_photos__link__text:hover {
+  text-decoration: underline;
+  color: #326dc7;
+}
+
+div#review {
+  margin: 3rem 0px;
+}
+
+.review_images {}
+
+img.images {
+  width: 45%;
+  margin-right: 12px;
+  border-radius: 5px;
+}
+
+.emoji {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+span.emoji_icon {
+  margin: 5%;
+}
+
+span.emoji_icon:hover {
+  cursor: pointer;
+}
+

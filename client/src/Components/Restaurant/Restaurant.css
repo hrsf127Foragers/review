@@ -1,0 +1,11 @@
+.border_top {
+  margin-bottom: 6%;
+  border-bottom: 1px solid grey;
+  opacity: .25;
+}
+
+.body_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

@@ -1,0 +1,60 @@
+.user_container {
+  width: 35%;
+}
+
+.user_infos {
+  display: flex;
+  flex-direction: row;
+}
+
+img.user_image {
+  width: 45%;
+  margin-right: .5rem;
+  border-radius: 5px;
+}
+
+.user_detail {}
+.user_name {}
+.user_location {}
+.user_friends {}
+
+span.friends_1,
+.user_star,
+.user_photo__num {
+  color: #f25b01;
+}
+
+.post_photos__num {
+  margin-top: 10px;
+}
+
+span.friends_2 {
+  color: rgb(226, 221, 38);
+}
+
+.user_reviews {}
+.user_photos {}
+
+.shareReview {
+  /* display: none; */
+  margin-top: 28px;
+  margin-left: 10px;
+}
+
+.share,
+.embed {
+  color: #326dc7;
+}
+
+.share:hover span.share_text,
+.embed:hover span.embed_text {
+  text-decoration: underline;
+}
+
+.divider {
+  border-bottom: 1px solid grey;
+  opacity: 0.25;
+  width: 90%;
+  margin-left: 6%;
+  margin: 12px;
+}

@@ -3,6 +3,8 @@ import React from 'react';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
 
+import styles from './Restaurant.css';
+
 class Restaurant extends React.Component {
   constructor(props) {
     super(props);
@@ -58,8 +60,8 @@ class Restaurant extends React.Component {
   render() {
     return (
       <div>
-        <div className="border_top"></div>
-        <div className="body_content">
+        <div className={styles.border_top}></div>
+        <div className={styles.body_content}>
           <User user={this.state.user}/>
           <Review review={this.state.review}/>
         </div>
