@@ -11,11 +11,14 @@ class Restaurant extends React.Component {
 
     this.state = {
       review: {},
-      user: {}
+      user: {},
+      showShareMenu: false
     }
 
-    console.log('Restaurants => ', props.showShareModal)
     this.extractData = this.extractData.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.handleMouseOver = this.handleMouseOver.bind(this);
   }
 
   componentDidMount() {
@@ -57,15 +60,33 @@ class Restaurant extends React.Component {
     })
   }
 
+  handleMouseEnter() {
+    this.setState({ showShareMenu: true })
+  }
+
+  handleMouseLeave() {
+    this.setState({ showShareMenu: false })
+  }
+
+  handleMouseOver() {
+    this.setState({ showShareMenu: true })
+  }
+
   render() {
     return (
       <div>
         <div className={styles.border_top}></div>
-        <div className={styles.body_content}>
+        <div className={styles.body_content}
+            onMouseEnter={() => this.handleMouseEnter()}
+            onMouseLeave={() => this.handleMouseLeave()}
+            onMouseOver={() => this.handleMouseOver()}
+          >
           <User
             user={this.state.user}
             showShareModal={this.props.showShareModal}
-            showEmbedModal={this.props.showEmbedModal} />
+            showEmbedModal={this.props.showEmbedModal}
+            showShareMenu={this.state.showShareMenu}
+          />
           <Review review={this.state.review}/>
         </div>
       </div>

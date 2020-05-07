@@ -30,6 +30,12 @@ body, h3 {
   transition-delay: 5s ease-in;
 }
 
+.share_text:hover,
+.embed_text:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* .pagination_container {
   margin-top: 12px;
   width: 50px;
@@ -100,11 +106,6 @@ body, h3 {
   color: rgb(226, 221, 38);
 } */
 
-.share_text:hover,
-.embed_text:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
 
 /* .user_infos {
   display: flex;
