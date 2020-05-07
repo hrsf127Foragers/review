@@ -31,7 +31,7 @@ h1.close {
 .socialMedia {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0 2rem;
 }
 
