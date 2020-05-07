@@ -14,7 +14,7 @@ class Restaurant extends React.Component {
       user: {}
     }
 
-    // console.log('Restaurants => ', props.review)
+    console.log('Restaurants => ', props.showShareModal)
     this.extractData = this.extractData.bind(this);
   }
 
@@ -62,7 +62,7 @@ class Restaurant extends React.Component {
       <div>
         <div className={styles.border_top}></div>
         <div className={styles.body_content}>
-          <User user={this.state.user}/>
+          <User user={this.state.user} showShareModal={this.props.showShareModal}/>
           <Review review={this.state.review}/>
         </div>
       </div>

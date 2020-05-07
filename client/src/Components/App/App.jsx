@@ -18,13 +18,13 @@ class App extends React.Component {
       paginationLimit: 10,
       paginationNum: 0,
       active: false,
-      showShareModal: true,
+      showShareModal: false,
+      showEmbedModal: false,
     }
 
     this.pagination = this.pagination.bind(this);
     this.handlePaginationClick = this.handlePaginationClick.bind(this);
-    this.showShareModal = this.showShareModal.bind(this);
-    this.hideShareModal = this.hideShareModal.bind(this);
+    this.showEmbedModal = this.showEmbedModal.bind(this);
   }
 
   componentDidMount() {
@@ -40,11 +40,13 @@ class App extends React.Component {
   }
 
   showShareModal() {
-    this.setState({ showShareModal: true });
+    console.log('toggle share modal')
+    this.setState({ showShareModal: !this.state.showShareModal });
   }
 
-  hideShareModal() {
-    this.setState({ showShareModal: false });
+  showEmbedModal() {
+    console.log('toggle embed modal')
+    // this.setState({ showEmbedModal: !this.state.showEmbedModal });
   }
 
   pagination(data) {
@@ -71,7 +73,8 @@ class App extends React.Component {
   render() {
 
     let reviewTemplate = this.state.reviews[this.state.paginationNum] && this.state.reviews[this.state.paginationNum].map((el, index) => {
-      return <Restaurant key={index} review={el}/>
+        <div onClick={() => this.showShareModal()}>Toggle modal</div>
+        return <Restaurant key={index} review={el} showShareModal={this.showShareModal.bind(this)}/>
     });
 
     let pagination = this.state.reviews.map((el, index) => {
@@ -85,7 +88,7 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
-        {/* {this.state.showShareModal ? <ShareModal show={this.state.show} handleClose={this.hideModal}/> : <div></div>} */}
+        {this.state.showShareModal ? <ShareModal showShareModal={this.showShareModal.bind(this)}/> : <div></div>}
       </div>
     )
   }

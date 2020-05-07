@@ -31,14 +31,15 @@ h1.close {
 .socialMedia {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
+  justify-content: space-around;
   margin: 0 2rem;
 }
 
-.facebook {
+.facebook,
+.twitter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 25%;
   background-color: #1777f2;
   padding: 1rem;
@@ -48,16 +49,16 @@ h1.close {
 
 .facebook_text {}
 
-.twitter {
+/* .twitter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 25%;
   background-color: #1777f2;
   padding: 1rem;
   border-radius: 5px;
   background-color: #4fabf1;
-}
+} */
 
 .twitter_text {}
 
@@ -80,4 +81,76 @@ h1.close {
 span.icon {
   border-right: 1px solid grey;
   padding-right: 10px;
+}
+
+.form_divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1.25rem 2rem;
+  color: rgba(0,0,0, 0.50);
+}
+
+.first_half {
+  border-bottom: 1px solid rgb(204, 204, 204);
+  width: 35%;
+  margin: 2rem;
+  color: rgb(204, 204, 204);
+}
+
+.second_half {
+  border-bottom: 1px solid rgb(204, 204, 204);
+  width: 35%;
+  margin-left: 2rem;
+}
+
+.text {
+  color: rgb(100, 96, 96);
+}
+
+.user_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0, 0.20);
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+
+h3 span {
+   background:#fff;
+   padding:0 10px;
+}
+
+.name,
+.email,
+.note {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 2rem;
+}
+
+.name_input,
+.from_email,
+.to_email {
+  margin: 1rem 0rem;
+  border: 1px solid rgba(0,0,0, 0.20);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.share_btn {
+  background-color: #e80a16;
+  color: white;
+  flex-direction: row;
+  padding: 12px;
+  width: 35%;
+  text-align: center;
+  margin: 1rem auto;
+  border-radius: 5px;
 }

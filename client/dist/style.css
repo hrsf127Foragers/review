@@ -270,3 +270,55 @@ h1.close:hover {
   border-right: 1px solid grey;
   padding-right: 10px;
 } */
+
+/* .form_divider {
+  margin: 3rem;
+  color: rgba(0,0,0, 0.50);;
+} */
+
+/* h3 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0, 0.20);
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+
+h3 span {
+   background:#fff;
+   padding:0 10px;
+} */
+
+/* .user_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* .name,
+.email,
+.note {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 2rem;
+} */
+
+/* .name_input,
+.from_email,
+.to_email {
+  margin: 1rem 0rem;
+  border: 1px solid rgba(0,0,0, 0.20);
+  padding: 1rem;
+  border-radius: 5px;
+} */
+
+/* .share_btn {
+  background-color: #e80a16;
+  color: white;
+  flex-direction: row;
+  padding: 12px;
+  width: 35%;
+  text-align: center;
+  margin: 1rem auto;
+  border-radius: 5px;
+} */
