@@ -17,8 +17,4 @@ describe('Should render the <App /> component onto the screen', () => {
     const wrapper = shallow(<App />);
     expect(wrapper).toBeDefined()
   });
-
-  it('should invoke pagination on componentDidMount', () => {
-
-  })
 });
