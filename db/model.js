@@ -28,6 +28,8 @@ const getReviewByRestaurantId = (id, callback) => {
                     on rt.user_id = u.id
                   INNER JOIN posts p
                     on rt.post_id = p.id
+                  INNER JOIN post_images ps
+                    on p.id = ps.post_id
                   ORDER BY STR_TO_DATE(created_at, '%m-%d-%Y') DESC`;
 
   connection.query(queryStr, (err, data) => {
@@ -35,7 +37,7 @@ const getReviewByRestaurantId = (id, callback) => {
       console.log('error retreiving resturants by id..')
       callback(err, null)
     } else {
-      console.log('retreiving resturants by id ', data)
+      // console.log('retreiving resturants by id ', data)
       callback(null, data)
     }
   });

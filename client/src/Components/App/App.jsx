@@ -23,6 +23,8 @@ class App extends React.Component {
 
     this.pagination = this.pagination.bind(this);
     this.handlePaginationClick = this.handlePaginationClick.bind(this);
+    this.showShareModal = this.showShareModal.bind(this);
+    this.hideShareModal = this.hideShareModal.bind(this);
   }
 
   componentDidMount() {
@@ -37,12 +39,11 @@ class App extends React.Component {
       })
   }
 
-  toggleShareModal() {
-    console.log('toggle modal')
-    this.setState({ showShareModal: !this.state.showShareModal });
+  showShareModal() {
+    this.setState({ showShareModal: true });
   }
 
-  toggleEmbedModal() {
+  hideShareModal() {
     this.setState({ showShareModal: false });
   }
 
@@ -75,7 +76,7 @@ class App extends React.Component {
 
     let pagination = this.state.reviews.map((el, index) => {
       let className = index === this.state.paginationNum ? "active" : ""
-      return <span key={index} className={className + ' pagination'} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
+      return <span key={index} className={styles.className + styles.pagination} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
     })
 
     return (
@@ -84,8 +85,7 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
-        <div onClick={(e) => this.toggleShareModal()} >TESTING</div>
-        {this.state.showShareModal ? <ShareModal handleClickClose={this.toggleShareModal.bind(this)}/> : <div></div>}
+        {/* {this.state.showShareModal ? <ShareModal show={this.state.show} handleClose={this.hideModal}/> : <div></div>} */}
       </div>
     )
   }

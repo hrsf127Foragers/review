@@ -12,9 +12,14 @@ describe('MyComponent', () => {
   })
 })
 
-describe('Should render the <App /> component onto the screen', () => {
+describe('App Component', () => {
   it('<App /> component should exist', () => {
     const wrapper = shallow(<App />);
     expect(wrapper).toBeDefined()
+  });
+
+  it('<App /> component should exist', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('.review_parent--container')).toHaveLength(1)
   });
 });
