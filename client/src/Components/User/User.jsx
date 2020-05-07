@@ -5,7 +5,7 @@ const User = ({user}) => {
   return (
     <div className="user_container">
       <div className="user_infos">
-        <img className="user_image" src="https://loremflickr.com/g/320/240/person" />
+        <img className="user_image" src={user.picture} />
         <div className="user_detail">
           <h3 className="user_name">{user.name}</h3>
           <h4 className="user_location">{user.location}</h4>

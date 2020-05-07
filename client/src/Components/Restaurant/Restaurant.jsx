@@ -32,6 +32,7 @@ class Restaurant extends React.Component {
       picture: 'https://loremflickr.com/g/320/240/restaurant'
     }
 
+
     let reviewObj = {
       rating: review.rating,
       created_date: review.created_at,
@@ -42,6 +43,9 @@ class Restaurant extends React.Component {
       funny: review.funny,
       image_url: review.image_url
     }
+
+    console.log('user obj => ', userObj)
+    console.log('review obj => ', reviewObj)
 
     this.setState({
       user: userObj,
