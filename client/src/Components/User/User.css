@@ -13,6 +13,10 @@ img.user_image {
   border-radius: 5px;
 }
 
+img.user_image:hover {
+  cursor: pointer
+}
+
 .user_detail {}
 .user_name {}
 .user_location {}

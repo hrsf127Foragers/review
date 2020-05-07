@@ -85,7 +85,7 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
-        {this.state.showShareModal ? <ShareModal show={this.state.show} handleClose={this.hideModal}/> : <div></div>}
+        {/* {this.state.showShareModal ? <ShareModal show={this.state.show} handleClose={this.hideModal}/> : <div></div>} */}
       </div>
     )
   }

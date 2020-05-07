@@ -54,6 +54,11 @@ img.images {
   border-radius: 5px;
 }
 
+.images:hover,
+.emoji:hover {
+  cursor: pointer
+}
+
 .emoji {
   margin-top: 5%;
   margin-bottom: 5%;
@@ -62,8 +67,3 @@ img.images {
 span.emoji_icon {
   margin: 5%;
 }
-
-span.emoji_icon:hover {
-  cursor: pointer;
-}
-
