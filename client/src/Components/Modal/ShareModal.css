@@ -8,12 +8,12 @@
 }
 
 .modal_main {
-  position:fixed;
+  position: fixed;
   background: white;
-  width: 80%;
-  height: auto;
-  top:50%;
-  left:50%;
+  width: 450px;
+  height: 750px;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%,-50%);
 }
 
@@ -40,32 +40,27 @@ h1.close {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 25%;
-  background-color: #1777f2;
-  padding: 1rem;
+  width: 150px;
+  padding: 10px 20px;
   border-radius: 5px;
   color: white;
+}
+.facebook {
+  background-color: #1777f2;
 }
 
 .facebook_text {}
 
-/* .twitter {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 25%;
-  background-color: #1777f2;
-  padding: 1rem;
-  border-radius: 5px;
+.twitter {
   background-color: #4fabf1;
-} */
+}
 
 .twitter_text {}
 
 .restaurant_url {
   margin: 1rem 2rem;
   border: 1px solid rgba(0,0,0, 0.20);
-  padding: 1rem;
+  padding: 5px;
   border-radius: 5px;
 }
 
@@ -73,8 +68,8 @@ h1.close {
 .icon {
   border: none;
   margin-left: 12px;
-  width: 85%;
   height: 2rem;
+  width: 270px;
   font-size: large;
 }
 
@@ -87,7 +82,7 @@ span.icon {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1.25rem 2rem;
+  margin: 0rem 2rem;
   color: rgba(0,0,0, 0.50);
 }
 
@@ -135,13 +130,20 @@ h3 span {
   margin: .5rem 2rem;
 }
 
+.textarea {
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0, 0.20)
+}
+
 .name_input,
 .from_email,
 .to_email {
-  margin: 1rem 0rem;
+  margin: .25rem 0rem;
   border: 1px solid rgba(0,0,0, 0.20);
-  padding: 1rem;
+  padding: 5px;
   border-radius: 5px;
+  height: 2rem;
+  font-size: large;
 }
 
 .share_btn {
