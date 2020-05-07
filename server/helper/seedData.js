@@ -68,6 +68,7 @@ module.exports = {
     let userObj = {
       id: id,
       user_name: userName,
+      image_url: 'https://loremflickr.com/g/320/240/person',
       location: location,
       friends: friends || 0,
       reviews: reviews || 0,
@@ -127,12 +128,11 @@ module.exports = {
   generateImage: function(range) {
     let postImage = [];
 
-
     for(let i = 1; i <= range; i++) {
       let randomPostIndex = this.randomNumberGenerator(range)
       let imageObj = {
         post_id: randomPostIndex,
-        image_url: 'https://loremflickr.com/g/320/240/restaurant'
+        review_image_url: 'https://loremflickr.com/g/320/240/restaurant'
       }
 
       postImage.push(imageObj)

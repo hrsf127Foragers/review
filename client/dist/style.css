@@ -9,20 +9,21 @@ body, h3 {
   border: 1px solid red;
 } */
 
-div#review {
+/* div#review {
   margin: 3rem 0px;
-}
+} */
 
-.body_content {
+/* .body_content {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-.shareReview {
+} */
+
+/* .shareReview {
   display: none;
   margin-top: 28px;
   margin-left: 10px;
-}
+} */
 
 .body_content:hover .shareReview {
   display: block;
@@ -60,44 +61,44 @@ div#review {
 } */
 
 /*  style applied to user data */
-.user_container {
+/* .user_container {
   width: 35%;
-}
+} */
 
-img.user_image {
+/* img.user_image {
   width: 45%;
   margin-right: .5rem;
   border-radius: 5px;
-}
+} */
 
-img.user_image:hover,
+/* img.user_image:hover,
 .images:hover,
 .emoji:hover {
   cursor: pointer
-}
+} */
 
-.share,
+/* .share,
 .embed {
   color: #326dc7;
-}
+} */
 
-.share:hover span.share_text,
+/* .share:hover span.share_text,
 .embed:hover span.embed_text {
   text-decoration: underline;
-}
+} */
 
-.post_photos--num {
+/* .post_photos__num {
   margin-top: 10px;
-}
+} */
 
-span.friends_1,
+/* span.friends_1,
 .user_star,
 .user_photo--num {
   color: #f25b01;
-}
-span.friends_2 {
+} */
+/* span.friends_2 {
   color: rgb(226, 221, 38);
-}
+} */
 
 .share_text:hover,
 .embed_text:hover {
@@ -105,76 +106,219 @@ span.friends_2 {
   text-decoration: underline;
 }
 
-.user_infos {
+/* .user_infos {
   display: flex;
   flex-direction: row;
-}
+} */
 
-.divider {
+/* .divider {
   border-bottom: 1px solid grey;
   opacity: 0.25;
   width: 90%;
   margin-left: 6%;
   margin: 12px;
-}
+} */
 
 
-.post {
+/* .post {
   width: 60%;
   display: inline-block;
-}
+} */
 
 
 /* styling applied to posts */
-.border_top {
+/* .border_top {
   margin-bottom: 6%;
   border-bottom: 1px solid grey;
   opacity: .25;
-}
+} */
 
-.rating {
+/* .rating {
   display: flex;
-}
+} */
 
-.stars {
+/* .stars {
   margin-right: 10px;
-}
+} */
 
-.review_stars {
+/* .review_stars {
   background-color: #f43839;
   color: white;
   border-right: 2px solid white;
-}
+} */
 
-.created_date {
+/* .created_date {
   opacity: .25;
-}
+} */
 
-a.post_photos--link {
+/* a.post_photos__link {
   text-decoration: none;
   color: black;
-}
+} */
 
-span.post_photos--link---text {
+/* span.post_photos__link__text {
   margin-left: 5px;
   color: #326dc7;
-}
+} */
 
-a.post_photos--link:hover {
+/* a.post_photos__link:hover {
   text-decoration: underline;
-}
+} */
 
-img.images {
+/* img.images {
   width: 45%;
   margin-right: 12px;
   border-radius: 5px;
-}
+} */
 
-.emoji {
+/* .emoji {
   margin-top: 5%;
   margin-bottom: 5%;
+} */
+
+/* span.emoji_icon {
+  margin: 5%;
+} */
+
+/* .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+} */
+
+/* .modal_main {
+  position:fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+} */
+
+/* .display-block {
+  display: block;
 }
 
-span.emoji_icon {
-  margin: 5%;
+.display-none {
+  display: none;
+} */
+
+/* .form_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2rem;
+} */
+
+/* h1.close {
+  color: #9e9c9c96;
+} */
+
+h1.close:hover {
+  cursor: pointer;
 }
+
+/* .socialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2rem;
+} */
+
+/* .facebook {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 25%;
+  background-color: #1777f2;
+  padding: 1rem;
+  border-radius: 5px;
+  color: white;
+} */
+
+/* .twitter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 25%;
+  background-color: #1777f2;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #4fabf1;
+} */
+
+/* .restaurant_url {
+  margin: 1rem 2rem;
+  border: 1px solid rgba(0,0,0, 0.20);
+  padding: 1rem;
+  border-radius: 5px;
+} */
+
+/* .site_url, .icon {
+  border: none;
+  margin-left: 12px;
+  width: 85%;
+  height: 2rem;
+  font-size: large;
+} */
+
+/* span.icon {
+  border-right: 1px solid grey;
+  padding-right: 10px;
+} */
+
+/* .form_divider {
+  margin: 3rem;
+  color: rgba(0,0,0, 0.50);;
+} */
+
+/* h3 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0, 0.20);
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+
+h3 span {
+   background:#fff;
+   padding:0 10px;
+} */
+
+/* .user_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* .name,
+.email,
+.note {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 2rem;
+} */
+
+/* .name_input,
+.from_email,
+.to_email {
+  margin: 1rem 0rem;
+  border: 1px solid rgba(0,0,0, 0.20);
+  padding: 1rem;
+  border-radius: 5px;
+} */
+
+/* .share_btn {
+  background-color: #e80a16;
+  color: white;
+  flex-direction: row;
+  padding: 12px;
+  width: 35%;
+  text-align: center;
+  margin: 1rem auto;
+  border-radius: 5px;
+} */

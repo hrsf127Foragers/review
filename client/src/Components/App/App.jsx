@@ -4,6 +4,8 @@ import axios from 'axios';
 import Restaurant from '../Restaurant/Restaurant.jsx';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
+import ShareModal from '../Modal/ShareModal.jsx';
+
 
 import styles from './App.css';
 
@@ -16,10 +18,13 @@ class App extends React.Component {
       paginationLimit: 10,
       paginationNum: 0,
       active: false,
+      showShareModal: false,
+      showEmbedModal: false,
     }
 
     this.pagination = this.pagination.bind(this);
     this.handlePaginationClick = this.handlePaginationClick.bind(this);
+    this.showEmbedModal = this.showEmbedModal.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +37,16 @@ class App extends React.Component {
       .catch(err => {
         console.log('Fetch Restaurants ERROR: ', err)
       })
+  }
+
+  showShareModal() {
+    console.log('toggle share modal')
+    this.setState({ showShareModal: !this.state.showShareModal });
+  }
+
+  showEmbedModal() {
+    console.log('toggle embed modal')
+    // this.setState({ showEmbedModal: !this.state.showEmbedModal });
   }
 
   pagination(data) {
@@ -58,12 +73,13 @@ class App extends React.Component {
   render() {
 
     let reviewTemplate = this.state.reviews[this.state.paginationNum] && this.state.reviews[this.state.paginationNum].map((el, index) => {
-      return <Restaurant key={index} review={el}/>
+        <div onClick={() => this.showShareModal()}>Toggle modal</div>
+        return <Restaurant key={index} review={el} showShareModal={this.showShareModal.bind(this)}/>
     });
 
     let pagination = this.state.reviews.map((el, index) => {
       let className = index === this.state.paginationNum ? "active" : ""
-      return <span key={index} className={className + ' pagination'} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
+      return <span key={index} className={styles.className + styles.pagination} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
     })
 
     return (
@@ -72,6 +88,7 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
+        {this.state.showShareModal ? <ShareModal showShareModal={this.showShareModal.bind(this)}/> : <div></div>}
       </div>
     )
   }

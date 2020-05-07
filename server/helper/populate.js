@@ -98,9 +98,9 @@ const databaseMethods = {
 
   // function to insert all the users to mysql
   insertUsers: (user, callback) => {
-    let queryStr = `INSERT INTO users (user_name, location, friends, reviews, photos) VALUES (?, ?, ?, ?, ?)`;
+    let queryStr = `INSERT INTO users (user_name, image_url, location, friends, reviews, photos) VALUES (?, ?, ?, ?, ?, ?)`;
 
-    connection.query(queryStr, [user.user_name, user.location, user.friends, user.reviews, user.photos], (err, res) => {
+    connection.query(queryStr, [user.user_name, user.image_url, user.location, user.friends, user.reviews, user.photos], (err, res) => {
       if(err) {
         console.log('error saving..')
         callback(err, null)
@@ -179,9 +179,9 @@ const databaseMethods = {
 
   // function to insert all the posts to mysql
   insertPostImages: (image, callback) => {
-    let queryStr = `INSERT INTO post_images (post_id, image_url) VALUES (?, ?)`;
+    let queryStr = `INSERT INTO post_images (post_id, review_image_url) VALUES (?, ?)`;
 
-    connection.query(queryStr, [image.post_id, image.image_url], (err, res) => {
+    connection.query(queryStr, [image.post_id, image.review_image_url], (err, res) => {
       if(err) {
         callback(err, null)
       } else {
