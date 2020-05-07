@@ -4,6 +4,8 @@ import axios from 'axios';
 import Restaurant from '../Restaurant/Restaurant.jsx';
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
+import ShareModal from '../Modal/ShareModal.jsx';
+
 
 import styles from './App.css';
 
@@ -16,10 +18,13 @@ class App extends React.Component {
       paginationLimit: 10,
       paginationNum: 0,
       active: false,
+      showShareModal: true,
     }
 
     this.pagination = this.pagination.bind(this);
     this.handlePaginationClick = this.handlePaginationClick.bind(this);
+    this.showShareModal = this.showShareModal.bind(this);
+    this.hideShareModal = this.hideShareModal.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +37,14 @@ class App extends React.Component {
       .catch(err => {
         console.log('Fetch Restaurants ERROR: ', err)
       })
+  }
+
+  showShareModal() {
+    this.setState({ showShareModal: true });
+  }
+
+  hideShareModal() {
+    this.setState({ showShareModal: false });
   }
 
   pagination(data) {
@@ -72,6 +85,7 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
+        {this.state.showShareModal ? <ShareModal show={this.state.show} handleClose={this.hideModal}/> : <div></div>}
       </div>
     )
   }
