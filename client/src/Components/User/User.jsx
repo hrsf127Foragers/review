@@ -5,7 +5,7 @@ import styles from './User.css';
 const User = ({user, showShareModal, showEmbedModal, showShareMenu}) => {
   // console.log('user => ', user)
   return (
-    <div className={styles.user_container + ' container'}>
+    <div className={styles.user_container}>
       <div className={styles.user_infos}>
         <img className={styles.user_image} src={user.picture} />
         <div className={styles.user_detail}>
