@@ -65,5 +65,12 @@ img.images {
 }
 
 span.emoji_icon {
-  margin: 5%;
+  /* margin: 5%; */
+  padding: 2% 6%;
+  border-radius: 5px;
+}
+
+span.emoji_icon:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #326dc7;
 }
