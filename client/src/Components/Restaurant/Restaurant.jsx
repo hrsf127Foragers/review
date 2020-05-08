@@ -62,7 +62,10 @@ class Restaurant extends React.Component {
       <div>
         <div className={styles.border_top}></div>
         <div className={styles.body_content}>
-          <User user={this.state.user} showShareModal={this.props.showShareModal}/>
+          <User
+            user={this.state.user}
+            showShareModal={this.props.showShareModal}
+            showEmbedModal={this.props.showEmbedModal} />
           <Review review={this.state.review}/>
         </div>
       </div>

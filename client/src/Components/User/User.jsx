@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './User.css';
 
-const User = ({user, showShareModal}) => {
+const User = ({user, showShareModal, showEmbedModal}) => {
   // console.log('user => ', user)
   return (
     <div className={styles.user_container}>
@@ -34,7 +34,7 @@ const User = ({user, showShareModal}) => {
             </span>
           </div>
           <div className={styles.divider}></div>
-          <div className={styles.embed}>
+          <div className={styles.embed} onClick={() => showEmbedModal()}>
             <span> <i className="fa fa-code" aria-hidden="true"></i> </span>
             <span className={styles.embed_text}>
               Embed Review
