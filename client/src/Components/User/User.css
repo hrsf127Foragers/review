@@ -52,6 +52,7 @@ span.friends_2 {
 
 .share:hover span.share_text,
 .embed:hover span.embed_text {
+  cursor: pointer;
   text-decoration: underline;
 }
 
