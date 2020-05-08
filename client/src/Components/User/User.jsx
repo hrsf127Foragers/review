@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './User.css';
 
-const User = ({user, showShareModal, showEmbedModal}) => {
+const User = ({user, showShareModal, showEmbedModal, showShareMenu}) => {
   // console.log('user => ', user)
   return (
     <div className={styles.user_container}>
@@ -26,7 +26,8 @@ const User = ({user, showShareModal, showEmbedModal}) => {
           </p>
         </div>
       </div>
-      <div className={styles.shareReview}>
+      {showShareMenu ?
+        (<div className={styles.shareReview}>
           <div className={styles.share} onClick={() => showShareModal()}>
             <span> <i className="fa fa-share" aria-hidden="true"></i> </span>
             <span className={styles.share_text}>
@@ -40,7 +41,10 @@ const User = ({user, showShareModal, showEmbedModal}) => {
               Embed Review
             </span>
           </div>
-        </div>
+        </div>)
+        :
+        <div></div>
+      }
     </div>
   )
 }

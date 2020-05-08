@@ -13,6 +13,10 @@ div.pagination_container {
   align-items: center;
 }
 
+div.pagination_container span{
+  margin-right: 1rem;
+}
+
 span.pagination.active {
   background-color: #326dc7;
   padding: 5px;
