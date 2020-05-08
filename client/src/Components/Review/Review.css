@@ -74,3 +74,22 @@ span.emoji_icon:hover {
   background-color: rgba(0, 0, 0, 0.15);
   color: #326dc7;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 650px) {
+  .post {
+    width: 100%;
+  }
+
+  .rating,
+  .post_photos__num,
+  .review,
+  .review_images {
+    margin: 1rem 2rem 0;
+  }
+
+  .emoji {
+    text-align: center;
+  }
+}

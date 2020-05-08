@@ -63,3 +63,37 @@ span.friends_2 {
   margin-left: 6%;
   margin: 12px;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 650px) {
+  .user_container {
+    width: 100%;
+  }
+
+  .shareReview {
+    margin-top: 28px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 2rem 3rem;
+    justify-content: space-evenly;
+  }
+
+
+  .user_infos {
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .embed {
+    color: #326dc7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px 2rem;
+  }
+}

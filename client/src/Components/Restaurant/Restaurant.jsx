@@ -22,8 +22,15 @@ class Restaurant extends React.Component {
   }
 
   componentDidMount() {
-    this.extractData(this.props.review)
+    this.extractData(this.props.review);
+
+    window.addEventListener('resize', (e) => {
+      if(window.innerWidth <= 650) {
+        this.setState({ showShareMenu: true })
+      }
+    })
   }
+
 
   extractData(review) {
     // console.log('extracting data => ', review);
