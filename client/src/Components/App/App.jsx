@@ -82,8 +82,8 @@ class App extends React.Component {
     });
 
     let pagination = this.state.reviews.map((el, index) => {
-      let className = index === this.state.paginationNum ? "active" : ""
-      return <span key={index} className={styles.className + styles.pagination} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
+      let classes = index === this.state.paginationNum ? "active " : ""
+      return <span key={index} className={classes + 'pagination'} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
     })
 
     return (

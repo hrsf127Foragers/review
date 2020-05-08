@@ -11,11 +11,12 @@
   position: fixed;
   background: white;
   width: 70%;
-  height: 71%;
+  height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   border-radius: 5px;
+  padding-bottom: 3rem;
 }
 
 .form_heading {
@@ -110,7 +111,7 @@ h4.user_name {
   background-color: #e80a16;
   color: white;
   padding: 12px;
-  width: 15%;
+  width: 100px;
   text-align: center;
   border-radius: 5px;
   margin: 1rem 2rem;
