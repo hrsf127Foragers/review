@@ -4,7 +4,7 @@ import styles from './Review.css';
 
 const Review = ({review}) => {
   return (
-    <div className={styles.post}>
+    <div className={styles.post + ' post'}>
       <div className={styles.rating}>
         <div className={styles.stars}>
           <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>

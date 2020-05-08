@@ -9,3 +9,12 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 650px) {
+  .body_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

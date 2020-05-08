@@ -87,7 +87,7 @@ class App extends React.Component {
     })
 
     return (
-      <div className="review_parent--container">
+      <div className={styles.review_parent__container}>
         {reviewTemplate}
         <div className={styles.pagination_container}>
           {pagination}
