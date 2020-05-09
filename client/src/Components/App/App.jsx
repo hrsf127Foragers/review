@@ -7,6 +7,8 @@ import Review from '../Review/Review.jsx';
 import ShareModal from '../Modal/ShareModal.jsx';
 import EmbedModal from '../Modal/EmbedModal.jsx';
 
+import EmptyReview from '../EmptyReview/Empty.jsx';
+
 
 import styles from './App.css';
 
@@ -86,8 +88,11 @@ class App extends React.Component {
       return <span key={index} className={classes + 'pagination'} onClick={(e) => this.handlePaginationClick(e, index)}> {index +1}</span>
     })
 
+    let emptyContainer = this.state.paginationNum == 0 ? <EmptyReview /> : <div className="testing"></div>
+
     return (
       <div className={styles.review_parent__container}>
+        {emptyContainer}
         {reviewTemplate}
         <div className={styles.pagination_container}>
           {pagination}
