@@ -21,8 +21,9 @@ class App extends React.Component {
       paginationLimit: 10,
       paginationNum: 0,
       active: false,
-      showShareModal: false,
-      showEmbedModal: false,
+      showShareModalBoolean: false,
+      showEmbedModalBoolean: false,
+      embedData: {},
     }
 
     this.pagination = this.pagination.bind(this);
@@ -43,13 +44,16 @@ class App extends React.Component {
   }
 
   showShareModal() {
-    console.log('toggle share modal')
-    this.setState({ showShareModal: !this.state.showShareModal });
+    // console.log('toggle share modal')
+    this.setState({ showShareModalBoolean: !this.state.showShareModalBoolean });
   }
 
-  showEmbedModal() {
-    console.log('toggle embed modal')
-    this.setState({ showEmbedModal: !this.state.showEmbedModal });
+  showEmbedModal(data) {
+    // console.log('toggle embed modal => ', data)
+    this.setState({
+      embedData: data,
+      showEmbedModalBoolean: !this.state.showEmbedModalBoolean
+    });
   }
 
   pagination(data) {
@@ -98,9 +102,9 @@ class App extends React.Component {
         <div className={styles.pagination_container}>
           {pagination}
         </div>
-        {this.state.showShareModal ? <ShareModal showShareModal={this.showShareModal.bind(this)}/> : <div></div>}
+        {this.state.showShareModalBoolean ? <ShareModal showShareModal={this.showShareModal.bind(this)}/> : <div></div>}
 
-        {this.state.showEmbedModal ? <EmbedModal showEmbedModal={this.showEmbedModal.bind(this)}/> : <div></div>}
+        {this.state.showEmbedModalBoolean ? <EmbedModal review={this.state.embedData} showEmbedModal={this.showEmbedModal.bind(this)}/> : <div></div>}
       </div>
     )
   }

@@ -47,6 +47,11 @@ class Restaurant extends React.Component {
 
 
     let reviewObj = {
+      user_name: review.user_name,
+      userpicture: review.image_url + '?random=' + Math.floor(Math.random() * 100 +1),
+      friends: review.friends,
+      restaurant_name: review.restaurant_name,
+      restaurant_reviews: review.reviews,
       rating: review.rating,
       created_date: review.created_at,
       photos: Math.floor(Math.random() * 5 + 0),
@@ -94,6 +99,7 @@ class Restaurant extends React.Component {
             showShareModal={this.props.showShareModal}
             showEmbedModal={this.props.showEmbedModal}
             showShareMenu={this.state.showShareMenu}
+            review={this.state.review}
           />
           <Review review={this.state.review}/>
         </div>
