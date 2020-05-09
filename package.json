@@ -29,6 +29,7 @@
     "jest-config": "^26.0.1",
     "jest-css-modules": "^2.1.0",
     "jest-puppeteer": "^4.4.0",
+    "jquery": "^3.5.1",
     "lorem-ipsum": "^2.0.3",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.3",
