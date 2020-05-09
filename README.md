@@ -8,7 +8,7 @@
 ```I will be using expressJS because it provides built-in middleware that does the heavy lifting such as serving static files and managing route.```
 
 ### Database:
-```I will be using MongoDB as database because this component doesn’t require a relational reference.```
+```I will be using MySQL as a database because this component does require a relational reference.```
 
 #### Fron-end:
 ```I will be using webpack as my transpiler for jsx component written in react since we each time member will be building a subset of the item page. Later on, when we try to put all the pieces together, it will be easier.```

@@ -1,8 +1,18 @@
 import React from 'react';
 
+import FiveStar from '../Stars/FiveStar.jsx';
+import FourStar from '../Stars/FourStar.jsx';
+import ThreeStar from '../Stars/ThreeStar.jsx';
+import TwoStar from '../Stars/TwoStar.jsx';
+import OneStar from '../Stars/OneStar.jsx';
+import ZeroStar from '../Stars/ZeroStar.jsx';
+
 import styles from './EmbedModal.css';
 
-const EmbedModal = ({showEmbedModal}) => {
+const EmbedModal = ({review, showEmbedModal}) => {
+
+  let userName = review.user_name.split(' ');
+  let reformatName = userName[0].charAt(0).toUpperCase() + ' ' + userName[1].charAt(0).toUpperCase() + '.';
 
   return (
     <div className={styles.modal}>
@@ -28,16 +38,14 @@ const EmbedModal = ({showEmbedModal}) => {
           <div className={styles.preview_container}>
             <div className={styles.preview_detail}>
               <div className={styles.restaurant_preview__heading}>
-                <h4 className={styles.restaurant_title}>Taco Boy</h4>
+                <h4 className={styles.restaurant_title}>{review.restaurant_name}</h4>
                 <div className={styles.preview_rating}>
-                  <div className={styles.stars}>
-                    <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                    <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                    <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                    <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                    <span className={styles.review_stars_grey}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                    <span className="review_count">9 reviews</span>
-                  </div>
+                  {review.rating === 5 && <FiveStar />}
+                  {review.rating === 4 && <FourStar />}
+                  {review.rating === 3 && <ThreeStar />}
+                  {review.rating === 2 && <TwoStar />}
+                  {review.rating === 1 && <OneStar />}
+                  {review.rating === 0 && <ZeroStar />}
                 </div>
               </div>
               <div className={styles.site_image__container}>
@@ -49,18 +57,18 @@ const EmbedModal = ({showEmbedModal}) => {
             </div>
             <div className={styles.preview_post__container}>
               <div className={styles.user_info}>
-                <img sr="https://loremflickr.com/g/320/240/person?random=1" alt="user image" />
+                <img className={styles.embed_userimage} src="https://loremflickr.com/g/320/240/person?random=1" alt="user image" />
                 <div className={styles.user_info__data}>
-                  <h4 className={styles.user_name}>M G.</h4>
+                  <h4 className={styles.user_name}>{reformatName}</h4>
                   <div className={styles.user_info_rating}>
                     <p className={styles.user_friends}>
                       <span className={styles.friends_1}> <i className="fa fa-odnoklassniki" aria-hidden="true"></i> </span>
                       <span className={styles.friends_2}> <i className="fa fa-odnoklassniki" aria-hidden="true"></i> </span>
-                      <span className={styles.preview_friends_count}> 0 </span>
+                      <span className={styles.preview_friends_count}> {review.friends} </span>
                     </p>
                     <p className={styles.user_reviews}>
                       <span className={styles.user_star}> <i className="fa fa-star-o" aria-hidden="true"></i> </span>
-                      <span className={styles.preview_stars_count}>9</span>
+                      <span className={styles.preview_stars_count}> {review.restaurant_reviews} </span>
                     </p>
                   </div>
                 </div>
@@ -69,19 +77,17 @@ const EmbedModal = ({showEmbedModal}) => {
 
             <div>
               <div className={styles.preview_rating}>
-                <div className={styles.stars}>
-                  <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                  <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                  <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                  <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                  <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-                  <span className={styles.created_date}>4/4/2020</span>
-                </div>
+                {review.rating === 5 && <FiveStar />}
+                {review.rating === 4 && <FourStar />}
+                {review.rating === 3 && <ThreeStar />}
+                {review.rating === 2 && <TwoStar />}
+                {review.rating === 1 && <OneStar />}
+                {review.rating === 0 && <ZeroStar />}
               </div>
 
               <div className={styles.preview_post_container}>
                 <p className={styles.preview_post}>
-                Called in a carry out order and the food did not disappoint. Their al pastor taco salad is delicious and so is their steak quesadilla.  They even through in some free chips and salsa :) Definitely recommend this place and will be coming back!
+                  {review.post}
                 </p>
               </div>
             </div>

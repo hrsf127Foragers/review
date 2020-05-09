@@ -73,9 +73,13 @@ span.emoji_icon {
 
 span.emoji_icon:hover {
   background-color: rgba(0, 0, 0, 0.15);
-  color: #326dc7;
+  text-shadow: none;
 }
 
+.emoji_count {
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 1px;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 650px) {

@@ -204,3 +204,11 @@ p.preview_post {
 h4.heading {
   margin-bottom: 0;
 }
+
+img.embed_userimage {
+  width: 65px;
+}
+
+.user_reviews {
+  margin-left: 10px;
+}

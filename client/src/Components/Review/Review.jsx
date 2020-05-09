@@ -36,9 +36,9 @@ const Review = ({review}) => {
         <img className={styles.images} src="https://loremflickr.com/g/320/240/restaurant?random=3" />
       </div>
       <div className={styles.emoji}>
-        <span className={styles.emoji_icon}> <i className="fa fa-lightbulb-o" aria-hidden="true"></i> Useful {review.useful} </span>
-        <span className={styles.emoji_icon}> <i className="fa fa-smile-o" aria-hidden="true"></i> Cool {review.cool} </span>
-        <span className={styles.emoji_icon}> <i className="fa fa-user-o" aria-hidden="true"></i> Funny {review.funny} </span>
+        <span className={styles.emoji_icon}> <i className="fa fa-lightbulb-o" aria-hidden="true"></i> Useful <span className={styles.emoji_count}>{review.useful}</span> </span>
+        <span className={styles.emoji_icon}> <i className="fa fa-smile-o" aria-hidden="true"></i> Cool <span className={styles.emoji_count}>{review.cool}</span> </span>
+        <span className={styles.emoji_icon}> <i className="fa fa-user-o" aria-hidden="true"></i> Funny <span className={styles.emoji_count}>{review.funny}</span> </span>
       </div>
     </div>
   )
