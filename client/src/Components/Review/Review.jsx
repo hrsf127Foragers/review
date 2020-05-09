@@ -10,7 +10,6 @@ import ZeroStar from '../Stars/ZeroStar.jsx';
 import styles from './Review.css';
 
 const Review = ({review}) => {
-  console.log('reviewObj => ', review)
   return (
     <div className={styles.post}>
       {review.rating === 5 && <FiveStar />}
@@ -19,18 +18,7 @@ const Review = ({review}) => {
       {review.rating === 2 && <TwoStar />}
       {review.rating === 1 && <OneStar />}
       {review.rating === 0 && <ZeroStar />}
-      {/* <FourStar /> */}
 
-      {/* <div className={styles.rating}>
-        <div className={styles.stars}>
-          <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-          <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-          <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-          <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-          <span className={styles.review_stars}> <i className="fa fa-star" aria-hidden="true"></i> </span>
-        </div>
-        <div className={styles.created_date}>{review.created_date}</div>
-      </div> */}
       <div className={styles.post_photos__num}>
         <a className={styles.post_photos__link} href="#">
           <i className="fa fa-camera" aria-hidden="true"></i>
