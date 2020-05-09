@@ -2,6 +2,7 @@ import React from 'react';
 
 import User from '../User/User.jsx';
 import Review from '../Review/Review.jsx';
+import EmptyReview from '../EmptyReview/Empty.jsx';
 
 import styles from './Restaurant.css';
 

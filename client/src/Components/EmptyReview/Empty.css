@@ -1,0 +1,178 @@
+
+.empty_container {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+
+.user_container {
+  width: 35%;
+}
+
+.user_infos {
+  display: flex;
+  flex-direction: row;
+}
+
+.user_name {
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 0px 3rem;
+  border-radius: 2px;
+  height: 1rem;
+  width: 2rem;
+}
+
+.user_location,
+.empty_friend,
+.empty_review {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  height: 1rem;
+  margin-left: 5px;
+  padding: 0px 2rem;
+}
+
+.user_image {
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 45%;
+  margin-right: .5rem;
+  border-radius: 5px;
+  height: 11rem;
+}
+
+.user_friends,
+.user_reviews {
+  display: flex;
+  /* height: 20%;
+  border-radius: 2px; */
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+span.friends_1,
+.user_star,
+.user_photo__num {
+  color: #f25b01;
+}
+
+.post_photos__num {
+  margin-top: 10px;
+}
+
+span.friends_2 {
+  color: rgb(226, 221, 38);
+}
+
+/* .user_reviews {} */
+.user_photos {}
+
+.shareReview {
+  /* display: none; */
+  margin-top: 28px;
+  margin-left: 10px;
+}
+
+.share,
+.embed {
+  color: #326dc7;
+}
+
+.share:hover span.share_text,
+.embed:hover span.embed_text {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.divider {
+  border-bottom: 1px solid grey;
+  opacity: 0.25;
+  width: 90%;
+  margin-left: 6%;
+  margin: 1rem 0 0;
+}
+
+/* style for the review section */
+.post {
+  width: 62%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-left: 1rem;
+  border-radius: 5px;
+  height: 15rem;
+}
+
+.rating {
+  display: flex;
+}
+
+.stars {
+  margin-right: 10px;
+}
+
+.review_stars {
+  background-color: #f43839;
+  color: white;
+  /* border-right: 2px solid white; */
+  margin: 0 1px;
+  font-size: xx-large;
+}
+
+.created_date {
+  opacity: .25;
+}
+
+
+div#review {
+  margin: 3rem 0px;
+}
+
+a.share_review {
+  text-decoration: none;
+  color: rgba(0,0,0, 0.45)
+}
+
+a.share_review:hover {
+  text-decoration: underline;
+  color: #326dc7;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 650px) {
+  .empty_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user_infos {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .post {
+    width: 93%;
+  }
+
+  .rating,
+  .post_photos__num,
+  .review,
+  .review_images {
+    margin: 1rem 2rem 0;
+  }
+
+  .emoji {
+    text-align: center;
+  }
+
+  .user_container {
+    width: 100%;
+  }
+
+  .divider {
+    display: none;
+  }
+}
