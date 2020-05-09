@@ -14,19 +14,15 @@ class Empty extends React.Component {
 
   componentDidMount() {
     $('.hover_empty_stars').mouseenter( e => {
-      console.log('(mouseOver) this: => ', e.currentTarget.dataset.color)
       let currentTargetColor = e.currentTarget.dataset.color;
 
       let starsElement = $('.fa.fa-star.hover_empty_stars');
-      console.log('star element => ', starsElement)
       for(let i = 0; i < starsElement.length; i++) {
         let el = Number(starsElement[i].dataset.color);
 
         if(el <= currentTargetColor) {
-          console.log('applied background => ', i)
           $(starsElement[i]).css('backgroundColor', this.state.starColor[i])
         } else {
-          console.log('dont =>', i)
           $(starsElement[i]).css('backgroundColor', 'rgba(0, 0, 0, 0.15)')
         }
       }
