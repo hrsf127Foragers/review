@@ -73,7 +73,6 @@ span.emoji_icon {
 
 span.emoji_icon:hover {
   background-color: rgba(0, 0, 0, 0.15);
-  color: #326dc7;
   text-shadow: none;
 }
 
