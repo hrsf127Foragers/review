@@ -110,11 +110,11 @@ span.friends_2 {
 }
 
 .stars {
-  margin-right: 10px;
+  display: flex;
 }
 
 .review_stars {
-  background-color: #f43839;
+  background-color: rgba(0, 0, 0, 0.15);
   color: white;
   /* border-right: 2px solid white; */
   margin: 0 1px;
@@ -137,7 +137,7 @@ a.share_review {
 
 a.share_review:hover {
   text-decoration: underline;
-  color: #326dc7;
+  text-shadow: 1px -1px 2px rgba(0,0,0, 0.25);
 }
 
 
