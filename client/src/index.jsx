@@ -3,4 +3,6 @@ import ReactDOM from 'react-dom';
 
 import App from './Components/App/App.jsx';
 
-ReactDOM.render(<App />, document.getElementById('review'));
+let randomRestaurant = Math.floor(Math.random() * 100 + 1);
+
+ReactDOM.render(<App restaurantId={randomRestaurant} />, document.getElementById('review'));
