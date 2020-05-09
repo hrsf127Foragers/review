@@ -1,0 +1,35 @@
+
+.rating {
+  display: flex;
+}
+
+.stars {
+  /* margin-right: 10px; */
+  display: flex;
+}
+
+.review_stars {
+  background-color: #f43839;
+  color: white;
+  border-right: 2px solid white;
+}
+
+.created_date {
+  opacity: .25;
+}
+
+a.post_photos__link {
+  text-decoration: none;
+  color: black;
+}
+
+.post_photos__num {
+  margin-top: 10px;
+}
+
+.empty_fill {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+  margin: 0 1px;
+}
+
