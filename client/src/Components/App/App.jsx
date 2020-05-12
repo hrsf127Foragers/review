@@ -32,7 +32,7 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log('rest id => ', this.props.restaurantId)
-    axios.get(`http://localhost:3000/api/${this.props.restaurantId}/reviews`)
+    axios.get(`http://localhost:3001/api/${this.props.restaurantId}/reviews`)
       .then(({data}) => {
         // console.log('Reviews by restaurant id => ', data);
         this.pagination(data)
