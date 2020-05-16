@@ -12,13 +12,13 @@ import styles from './Review.css';
 const Review = ({review}) => {
   return (
     <div className={styles.post}>
-      {review.rating === 5 && <FiveStar />}
-      {review.rating === 4 && <FourStar />}
-      {review.rating === 3 && <ThreeStar />}
-      {review.rating === 2 && <TwoStar />}
-      {review.rating === 1 && <OneStar />}
-      {review.rating === 0 && <ZeroStar />}
-      <div className="created_date">{review.created_date}</div>
+      {review.rating === 5 && <FiveStar createdData={review.created_date}/>}
+      {review.rating === 4 && <FourStar createdData={review.created_date} />}
+      {review.rating === 3 && <ThreeStar createdData={review.created_date} />}
+      {review.rating === 2 && <TwoStar createdData={review.created_date} />}
+      {review.rating === 1 && <OneStar createdData={review.created_date} />}
+      {review.rating === 0 && <ZeroStar createdData={review.created_date} />}
+
       <div className={styles.post_photos__num}>
         <a className={styles.post_photos__link} href="#">
           <i className="fa fa-camera" aria-hidden="true"></i>
