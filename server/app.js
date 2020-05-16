@@ -85,6 +85,35 @@ app.get('/api/:restaurant_id/reviews', (req, res) => {
   })
 });
 
+
+// testing with dummy data
+// app.get('/api/:restaurant_id/reviews', (req, res) => {
+//   let dummyData = [
+//     {
+//         "post_id": 1197,
+//         "restaurant_id": 5,
+//         "user_id": 73,
+//         "id": 1197,
+//         "restaurant_name": "Jack's Beer Stand",
+//         "user_name": "Scooby Harris",
+//         "image_url": "https://loremflickr.com/g/320/240/user?lock73",
+//         "location": "Clayton, HI",
+//         "friends": 358,
+//         "reviews": 101,
+//         "photos": 30,
+//         "rating": 0,
+//         "created_at": "05-15-2019",
+//         "check_in": 1,
+//         "useful": 4,
+//         "funny": 2,
+//         "cool": 0,
+//         "post": "Laboris incididunt aute magna voluptate adipisicing. Nostrud do excepteur.\nIpsum sit aute est. Elit aute qui. In eu eu eiusmod. Irure in aliquip magna anim.",
+//         "review_image_url": "https://loremflickr.com/g/320/240/restaurant?lock=1381"
+//     }];
+
+//     res.status(200).send(dummyData);
+// });
+
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);
 })

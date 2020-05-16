@@ -1,6 +1,10 @@
 const mysql = require('mysql');
 const connection = require('./config.js');
 
+connection.connect(() => {
+  console.log('Mysql database is connected.')
+});
+
 // function to insert all the restaurant to mysql
 const getRestaurants = (callback) => {
 

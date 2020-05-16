@@ -68,7 +68,7 @@ module.exports = {
     let userObj = {
       id: id,
       user_name: userName,
-      image_url: 'https://loremflickr.com/g/320/240/user?lock' + id,
+      image_url: 'https://loremflickr.com/g/320/240/user?lock=' + id,
       location: location,
       friends: friends || 0,
       reviews: reviews || 0,

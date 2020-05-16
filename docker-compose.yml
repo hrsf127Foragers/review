@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  yelp_review:
+    build: './'
+    depends_on:
+      - 'mysql'
+    ports:
+      - '3001:3001'
+
+
+  mysql:
+    build: database/
+    environment:
+      restart: always
+
