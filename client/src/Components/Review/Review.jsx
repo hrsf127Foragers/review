@@ -18,7 +18,7 @@ const Review = ({review}) => {
       {review.rating === 2 && <TwoStar />}
       {review.rating === 1 && <OneStar />}
       {review.rating === 0 && <ZeroStar />}
-
+      <div className="created_date">{review.created_date}</div>
       <div className={styles.post_photos__num}>
         <a className={styles.post_photos__link} href="#">
           <i className="fa fa-camera" aria-hidden="true"></i>
