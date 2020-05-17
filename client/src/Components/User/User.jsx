@@ -7,7 +7,7 @@ const User = ({user, showShareModal, showEmbedModal, showShareMenu, review}) => 
   return (
     <div className={styles.user_container}>
       <div className={styles.user_infos}>
-        <img className={styles.user_image} src={user.picture} />
+        <img className={styles.user_image} src={user.picture} alt='user images'/>
         <div className={styles.user_detail}>
           <h3 className={styles.user_name}>{user.name}</h3>
           <h4 className={styles.user_location}>{user.location}</h4>

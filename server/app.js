@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const expressStaticGzip = require('express-static-gzip');
+
 const model = require('../db/model.js');
 
 const app = express();
@@ -28,7 +30,12 @@ app.use(function (req, res, next) {
 });
 
 // enable express middleware
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.use(expressStaticGzip(path.join(__dirname, '../client/dist'), {
+  enableBrotli: true,
+  orderPreference: ['br', 'gz']
+}));
 
 app.get('/api/restaurants', (req, res) => {
   model.getRestaurants((err, data) => {

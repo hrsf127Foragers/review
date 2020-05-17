@@ -10,7 +10,8 @@
     "start": "sleep 15 && node server/app.js",
     "react-dev": "webpack -d --watch",
     "createDB": "mysql -u root < db/schema.sql",
-    "seedData": "npm run createDB && node server/helper/populate.js"
+    "seedData": "npm run createDB && node server/helper/populate.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,10 @@
   "homepage": "https://github.com/hrsf127Foragers/review#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^4.0.0",
     "express": "^4.17.1",
+    "express-static-gzip": "^2.0.6",
     "faker": "^4.1.0",
     "jest-config": "^26.0.1",
     "jest-css-modules": "^2.1.0",
@@ -37,7 +41,8 @@
     "random-date": "^0.1.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "underscore": "^1.10.2"
+    "underscore": "^1.10.2",
+    "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

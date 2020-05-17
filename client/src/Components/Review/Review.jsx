@@ -31,9 +31,9 @@ const Review = ({review}) => {
         </p>
       </div>
       <div className={styles.review_images}>
-        <img className={styles.images} src="https://loremflickr.com/g/320/240/restaurant?lock=1"  />
-        <img className={styles.images} src="https://loremflickr.com/g/320/240/restaurant?lock=2" />
-        <img className={styles.images} src="https://loremflickr.com/g/320/240/restaurant?lock=3" />
+        <img className={styles.images} src="https://loremflickr.com/g/320/240/restaurant?lock=1"  alt='images'/>
+        <img className={styles.images} src="https://loremflickr.com/g/320/240/restaurant?lock=2" alt='images'/>
+        <img className={styles.images} src="https://loremflickr.com/g/320/240/restaurant?lock=3" alt='images'/>
       </div>
       <div className={styles.emoji}>
         <span className={styles.emoji_icon}> <i className="fa fa-lightbulb-o" aria-hidden="true"></i> Useful <span className={styles.emoji_count}>{review.useful}</span> </span>
