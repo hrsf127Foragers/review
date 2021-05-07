@@ -41,7 +41,7 @@
     "random-date": "^0.1.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "underscore": "^1.10.2",
+    "underscore": "^1.12.1",
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
